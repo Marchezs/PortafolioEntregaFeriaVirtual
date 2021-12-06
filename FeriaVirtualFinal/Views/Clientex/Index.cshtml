@@ -1,0 +1,59 @@
+﻿@using FeriaVirtualFinal.Negocio;
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="login-header">Lista Clientes  Externos</h2>
+
+@{List<Clientex> clientexs = (List<Clientex>)ViewBag.clientexs;}
+
+
+<table class="card-body" id="createproductor">
+    <tr>
+        <th>Nombre</th>
+       
+        <th>Rut</th>
+        <th>Pais</th>
+        <th>Ciudad</th>
+        <th>Direccion</th>
+        <th>Telefono</th>
+        <th>Codigo postal</th>
+        <th>Correo</th>
+        <th>Opciones</th>
+
+    </tr>
+
+    @foreach (var clientex in clientexs)
+    {
+    <tr>
+
+        <td width="10%">@clientex.NomClientex</td>
+        <td width="10%">@clientex.RutClientex</td>
+        <td width="10%" >@clientex.PaisClientex</td>
+        <td width="10%">@clientex.CiudadClientex</td>
+        <td width="10%">@clientex.DirecClientex</td>
+        <td width="10%">@clientex.TelefClienteX</td>
+        <td width="10%">@clientex.PostalClientex</td>
+        <td width="10%">@clientex.CorreoClientex</td>
+        
+        <td>
+            
+            @Html.ActionLink("Eliminar", "Delete", new { id = clientex.ClientexId })
+            @Html.ActionLink("Modificar", "Edit", new { id = clientex.ClientexId })
+            
+        </td>
+
+
+
+
+
+
+
+
+    </tr>
+
+    }
+
+</table>
+
+<div class="alert alert-success">@TempData["mensaje"]</div>

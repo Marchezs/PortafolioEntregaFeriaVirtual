@@ -1,0 +1,53 @@
+﻿@model FeriaVirtualFinal.Negocio.Clientex
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+
+<div id="listarproducto1">
+    @using (Html.BeginForm())
+    {
+
+
+
+        <div class="login">
+
+
+            <h2 class="login-header">Modificar Cliente Externo</h2>
+
+            <form class="login-container">
+
+                @Html.HiddenFor(x => x.ClientexId)
+                <p style="padding-left:50px;width : 400px; height: 40px"><input placeholder="Nombre Cliente externo" @Html.TextBoxFor(x => x.NomClientex)></p>
+                <p style="padding-left:50px;width : 400px; height: 40px"><input placeholder="ID" @Html.TextBoxFor(x => x.RutClientex)></p>
+                <p style="padding-left:50px;width : 400px; height: 40px"><input placeholder="Pais" @Html.TextBoxFor(x => x.PaisClientex)></p>
+                <p style="padding-left:50px;width : 400px; height: 40px"><input placeholder="Ciudad" @Html.TextBoxFor(x => x.CiudadClientex)></p>
+                <p style="padding-left:50px;width : 400px; height: 40px"><input placeholder="Direccion" @Html.TextBoxFor(x => x.DirecClientex)></p>
+                <p style="padding-left:50px;width : 400px; height: 40px"><input placeholder="Telefono" @Html.TextBoxFor(x => x.TelefClienteX)></p>
+                <p style="padding-left:50px;width : 400px; height: 40px"><input placeholder="COD POSTAL" @Html.TextBoxFor(x => x.PostalClientex)></p>
+                <p style="padding-left:50px;width : 400px; height: 40px"><input placeholder="Correo" @Html.TextBoxFor(x => x.CorreoClientex)></p>
+                <p style="padding-left:50px;width : 400px; height: 40px"><input type="submit" value="Modificar"></p>
+
+
+
+
+
+
+            </form>
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+    }
+    <br />
+    <div class="alert alert-danger">@Html.ValidationSummary()</div>
+</div>

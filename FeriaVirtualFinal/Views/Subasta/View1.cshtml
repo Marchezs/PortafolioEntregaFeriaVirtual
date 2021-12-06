@@ -1,0 +1,59 @@
+﻿@using FeriaVirtualFinal.Negocio;
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="login-header">Lista de Subastas</h2>
+
+@{List<Subasta> subastas = (List<Subasta>)ViewBag.subastas;}
+
+
+<table class="card-body" id="createproductor">
+    <tr>
+
+
+        <th>Peso minimo</th>
+        <th>Peso Maximo</th>
+        <th>Descripcion</th>
+        <th>Estado</th>
+        <th>Fecha de inicio</th>
+        <th>Fecha de termino</th>
+        <th>Opciones</th>
+
+
+    </tr>
+
+    @foreach (var subasta in subastas)
+    {
+        <tr>
+
+            <td width="10%">@subasta.SubPesoMin</td>
+            <td width="10%">@subasta.SubPesoMax</td>
+            <td width="25%">@subasta.SubDecrip</td>
+            <td width="10%">@subasta.SubEstado</td>
+            <td width="10%">@subasta.SubIni</td>
+            <td width="10%">@subasta.SubFin</td>
+
+
+            <td>
+
+               
+                @Html.ActionLink("Pedir", "Edit", new { id = subasta.SubastaId })
+                
+
+            </td>
+
+
+
+
+
+
+
+
+        </tr>
+
+    }
+
+</table>
+
+<div class="alert alert-success">@TempData["mensaje"]</div>

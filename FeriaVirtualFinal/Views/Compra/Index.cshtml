@@ -1,0 +1,73 @@
+﻿@using FeriaVirtualFinal.Negocio;
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="login-header">Compras</h2>
+
+@{List<Compra> compras = (List<Compra>)ViewBag.compras;}
+@{List<Producto> productos = (List<Producto>)ViewBag.productos;}
+
+
+<table class="card-body" id="createproductor">
+    <tr>
+
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Datos</th>
+
+
+
+
+
+    </tr>
+
+    @foreach (var producto in productos)
+    {
+    <tr>
+
+        <td>@producto.ProductoNomb</td>
+        <td>@producto.ProductoPrecio</td>
+        <td>@producto.ProductoDatos</td>
+        
+
+
+    </tr>
+
+
+    }
+    
+
+
+</table>
+
+<table class="card-body" id="createproductor">
+
+    <tr>
+        <th>Detalle</th>
+        
+
+    </tr>
+    <tr>
+        <th>cantidad</th>
+        <th>valor</th>
+        <th>Moneda</th>
+
+    </tr>
+    @foreach (var compra in compras)
+    {
+        <tr>
+
+            <td>@compra.CantidadCompra</td>
+            <td>@compra.ValorCompra</td>
+            <td>Dolar</td>
+
+
+        </tr>
+
+
+    }
+</table>
+
+
+@TempData["mensaje"]

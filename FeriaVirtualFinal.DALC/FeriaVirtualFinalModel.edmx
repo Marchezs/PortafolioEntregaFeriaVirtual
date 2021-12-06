@@ -1,0 +1,1110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="18.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CLIENTEI">
+          <Key>
+            <PropertyRef Name="CLIENTEI_ID" />
+          </Key>
+          <Property Name="CLIENTEI_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE_IN" Type="varchar2" MaxLength="50" />
+          <Property Name="RUT_IN" Type="varchar2" MaxLength="25" />
+          <Property Name="REGION_IN" Type="varchar2" MaxLength="50" />
+          <Property Name="DIRECCION_IN" Type="varchar2" MaxLength="25" />
+          <Property Name="COMUNA_IN" Type="varchar2" MaxLength="25" />
+          <Property Name="TELEFONO_IN" Type="varchar2" MaxLength="25" />
+          <Property Name="CORREO_IN" Type="varchar2" MaxLength="25" />
+          <Property Name="PEDIDO_ID" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="CLIENTEX">
+          <Key>
+            <PropertyRef Name="CLIENTEX_ID" />
+          </Key>
+          <Property Name="CLIENTEX_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE_EX" Type="varchar2" MaxLength="50" />
+          <Property Name="RUT_EX" Type="varchar2" MaxLength="25" />
+          <Property Name="PAIS_EX" Type="varchar2" MaxLength="25" />
+          <Property Name="CIUDAD_EX" Type="varchar2" MaxLength="25" />
+          <Property Name="DIRECCION_EX" Type="varchar2" MaxLength="25" />
+          <Property Name="TELEFONO_EX" Type="varchar2" MaxLength="25" />
+          <Property Name="COD_POSTAL" Type="varchar2" MaxLength="25" />
+          <Property Name="CORREO_EX" Type="varchar2" MaxLength="25" />
+          <Property Name="PEDIDO_ID" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="COMPRA">
+          <Key>
+            <PropertyRef Name="COMPRA_ID" />
+          </Key>
+          <Property Name="COMPRA_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="COMPRA_CANT" Type="number" Precision="38" Scale="0" />
+          <Property Name="COMPRA_VALOR" Type="number" Precision="38" Scale="0" />
+          <Property Name="PEDIDO_ID" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="CONTRATO">
+          <Key>
+            <PropertyRef Name="CONTRATO_ID" />
+          </Key>
+          <Property Name="CONTRATO_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CONTRATO_TIPO" Type="varchar2" MaxLength="100" />
+          <Property Name="CONTRATO_INI" Type="varchar2" MaxLength="50" />
+          <Property Name="CONTRATO_FIN" Type="varchar2" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PEDIDO">
+          <Key>
+            <PropertyRef Name="PEDIDO_ID" />
+          </Key>
+          <Property Name="PEDIDO_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PEDIDO_TIPO" Type="varchar2" MaxLength="30" />
+          <Property Name="PEDIDO_DATOS" Type="varchar2" MaxLength="100" />
+          <Property Name="PEDIDO_DESTINO" Type="varchar2" MaxLength="100" />
+          <Property Name="PRODUCTO_ID" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="PRODUCTO">
+          <Key>
+            <PropertyRef Name="PRODUCTO_ID" />
+          </Key>
+          <Property Name="PRODUCTO_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PRODUCTO_NOMB" Type="varchar2" MaxLength="100" />
+          <Property Name="PRODUCTO_DATOS" Type="varchar2" MaxLength="100" />
+          <Property Name="PRODUCTO_PRECIO" Type="number" Precision="38" Scale="0" />
+          <Property Name="PRODUCTOR_ID" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="PRODUCTOR">
+          <Key>
+            <PropertyRef Name="PRODUCTOR_ID" />
+          </Key>
+          <Property Name="PRODUCTOR_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PRODUCTOR_NOMB" Type="varchar2" MaxLength="100" />
+          <Property Name="PRODUCTOR_RUT" Type="varchar2" MaxLength="25" />
+          <Property Name="PRODUCTOR_DIREC" Type="varchar2" MaxLength="30" />
+          <Property Name="PRODUCTOR_TELEF" Type="varchar2" MaxLength="25" />
+          <Property Name="PRODUCTOR_MEIL" Type="varchar2" MaxLength="30" />
+          <Property Name="CONTRATO_ID" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="SUBASTA">
+          <Key>
+            <PropertyRef Name="SUB_ID" />
+          </Key>
+          <Property Name="SUB_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="SUB_MINPESO" Type="varchar2" MaxLength="25" />
+          <Property Name="SUB_MAXPESO" Type="varchar2" MaxLength="25" />
+          <Property Name="SUB_DESCRIP" Type="varchar2" MaxLength="100" />
+          <Property Name="SUB_ESTADO" Type="varchar2" MaxLength="25" />
+          <Property Name="SUB_INI" Type="varchar2" MaxLength="25" />
+          <Property Name="SUB_FIN" Type="varchar2" MaxLength="25" />
+          <Property Name="PEDIDO_ID" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="TRANSPORTISTA">
+          <Key>
+            <PropertyRef Name="TRANS_ID" />
+          </Key>
+          <Property Name="TRANS_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TRANS_NOMB" Type="varchar2" MaxLength="100" />
+          <Property Name="TRANS_RUT" Type="varchar2" MaxLength="25" />
+          <Property Name="TRANS_TELEF" Type="varchar2" MaxLength="25" />
+          <Property Name="TRANS_MAIL" Type="varchar2" MaxLength="50" />
+          <Property Name="TRANS_DIREC" Type="varchar2" MaxLength="30" />
+          <Property Name="TRANS_MINPESO" Type="varchar2" MaxLength="25" />
+          <Property Name="TRANS_MAXPESO" Type="varchar2" MaxLength="25" />
+          <Property Name="TRANS_PATENTE" Type="varchar2" MaxLength="25" />
+          <Property Name="SUB_ID" Type="number" Precision="38" Scale="0" />
+        </EntityType>
+        <EntityType Name="USUARIO">
+          <Key>
+            <PropertyRef Name="USER_ID" />
+          </Key>
+          <Property Name="USER_ID" Type="number" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="EMAIL" Type="varchar2" MaxLength="200" />
+          <Property Name="PASSWORD" Type="varchar2" MaxLength="200" />
+          <Property Name="ROL" Type="varchar2" MaxLength="50" />
+        </EntityType>
+        <Association Name="SYS_C008196">
+          <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="0..1" />
+          <End Role="CLIENTEX" Type="Self.CLIENTEX" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PEDIDO">
+              <PropertyRef Name="PEDIDO_ID" />
+            </Principal>
+            <Dependent Role="CLIENTEX">
+              <PropertyRef Name="PEDIDO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C008197">
+          <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="0..1" />
+          <End Role="CLIENTEI" Type="Self.CLIENTEI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PEDIDO">
+              <PropertyRef Name="PEDIDO_ID" />
+            </Principal>
+            <Dependent Role="CLIENTEI">
+              <PropertyRef Name="PEDIDO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C008198">
+          <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="0..1" />
+          <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTO">
+              <PropertyRef Name="PRODUCTO_ID" />
+            </Principal>
+            <Dependent Role="PEDIDO">
+              <PropertyRef Name="PRODUCTO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C008199">
+          <End Role="PRODUCTOR" Type="Self.PRODUCTOR" Multiplicity="0..1" />
+          <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTOR">
+              <PropertyRef Name="PRODUCTOR_ID" />
+            </Principal>
+            <Dependent Role="PRODUCTO">
+              <PropertyRef Name="PRODUCTOR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C008200">
+          <End Role="CONTRATO" Type="Self.CONTRATO" Multiplicity="0..1" />
+          <End Role="PRODUCTOR" Type="Self.PRODUCTOR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CONTRATO">
+              <PropertyRef Name="CONTRATO_ID" />
+            </Principal>
+            <Dependent Role="PRODUCTOR">
+              <PropertyRef Name="CONTRATO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C008201">
+          <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="0..1" />
+          <End Role="SUBASTA" Type="Self.SUBASTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PEDIDO">
+              <PropertyRef Name="PEDIDO_ID" />
+            </Principal>
+            <Dependent Role="SUBASTA">
+              <PropertyRef Name="PEDIDO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C008202">
+          <End Role="SUBASTA" Type="Self.SUBASTA" Multiplicity="0..1" />
+          <End Role="TRANSPORTISTA" Type="Self.TRANSPORTISTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUBASTA">
+              <PropertyRef Name="SUB_ID" />
+            </Principal>
+            <Dependent Role="TRANSPORTISTA">
+              <PropertyRef Name="SUB_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C008203">
+          <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="0..1" />
+          <End Role="COMPRA" Type="Self.COMPRA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PEDIDO">
+              <PropertyRef Name="PEDIDO_ID" />
+            </Principal>
+            <Dependent Role="COMPRA">
+              <PropertyRef Name="PEDIDO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="SP_CREATE_CLIENTEI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FERIAVIRTUAL">
+          <Parameter Name="V_NOMBRE" Type="varchar2" Mode="In" />
+          <Parameter Name="V_RUT" Type="varchar2" Mode="In" />
+          <Parameter Name="V_REGION" Type="varchar2" Mode="In" />
+          <Parameter Name="V_DIRECCION" Type="varchar2" Mode="In" />
+          <Parameter Name="V_COMUNA" Type="varchar2" Mode="In" />
+          <Parameter Name="V_TELEFONO" Type="varchar2" Mode="In" />
+          <Parameter Name="V_CORREO" Type="varchar2" Mode="In" />
+          <Parameter Name="V_PEDIDO_ID" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_CREATE_CLIENTEX" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FERIAVIRTUAL">
+          <Parameter Name="V_NOMBRE" Type="varchar2" Mode="In" />
+          <Parameter Name="V_RUT" Type="varchar2" Mode="In" />
+          <Parameter Name="V_PAIS" Type="varchar2" Mode="In" />
+          <Parameter Name="V_CIUDAD" Type="varchar2" Mode="In" />
+          <Parameter Name="V_DIRECCION" Type="varchar2" Mode="In" />
+          <Parameter Name="V_TELEFONO" Type="varchar2" Mode="In" />
+          <Parameter Name="V_COD" Type="varchar2" Mode="In" />
+          <Parameter Name="V_CORREO" Type="varchar2" Mode="In" />
+          <Parameter Name="V_PEDIDO_ID" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_CREATE_COMPRA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FERIAVIRTUAL">
+          <Parameter Name="V_CANTIDAD" Type="number" Mode="In" />
+          <Parameter Name="V_VALOR" Type="number" Mode="In" />
+          <Parameter Name="V_PEDIDO_ID" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_CREATE_CONTRATO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FERIAVIRTUAL">
+          <Parameter Name="V_TIPO" Type="varchar2" Mode="In" />
+          <Parameter Name="V_INI" Type="varchar2" Mode="In" />
+          <Parameter Name="V_FIN" Type="varchar2" Mode="In" />
+        </Function>
+        <Function Name="SP_CREATE_PEDIDO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FERIAVIRTUAL">
+          <Parameter Name="V_TIPO" Type="varchar2" Mode="In" />
+          <Parameter Name="V_DATOS" Type="varchar2" Mode="In" />
+          <Parameter Name="V_DESTINO" Type="varchar2" Mode="In" />
+          <Parameter Name="V_PRODUCTO_ID" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_CREATE_PRODUCTO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FERIAVIRTUAL">
+          <Parameter Name="V_NOMBRE" Type="varchar2" Mode="In" />
+          <Parameter Name="V_DATOS" Type="varchar2" Mode="In" />
+          <Parameter Name="V_PRECIO" Type="number" Mode="In" />
+          <Parameter Name="V_PRODUCTOR_ID" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_CREATE_PRODUCTOR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FERIAVIRTUAL">
+          <Parameter Name="V_NOMBRE" Type="varchar2" Mode="In" />
+          <Parameter Name="V_RUT" Type="varchar2" Mode="In" />
+          <Parameter Name="V_DIRECCION" Type="varchar2" Mode="In" />
+          <Parameter Name="V_TELEFONO" Type="varchar2" Mode="In" />
+          <Parameter Name="V_MAIL" Type="varchar2" Mode="In" />
+          <Parameter Name="V_CONTRATO_ID" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_CREATE_SUBASTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FERIAVIRTUAL">
+          <Parameter Name="V_MIN" Type="varchar2" Mode="In" />
+          <Parameter Name="V_MAX" Type="varchar2" Mode="In" />
+          <Parameter Name="V_DESCRIP" Type="varchar2" Mode="In" />
+          <Parameter Name="V_ESTADO" Type="varchar2" Mode="In" />
+          <Parameter Name="V_INI" Type="varchar2" Mode="In" />
+          <Parameter Name="V_FIN" Type="varchar2" Mode="In" />
+          <Parameter Name="V_PEDIDO_ID" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_CREATE_TRANSPORTISTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FERIAVIRTUAL">
+          <Parameter Name="V_NOMBRE" Type="varchar2" Mode="In" />
+          <Parameter Name="V_RUT" Type="varchar2" Mode="In" />
+          <Parameter Name="V_TELEFONO" Type="varchar2" Mode="In" />
+          <Parameter Name="V_MAIL" Type="varchar2" Mode="In" />
+          <Parameter Name="V_DIRECCION" Type="varchar2" Mode="In" />
+          <Parameter Name="V_MIN" Type="varchar2" Mode="In" />
+          <Parameter Name="V_MAX" Type="varchar2" Mode="In" />
+          <Parameter Name="V_PATENTE" Type="varchar2" Mode="In" />
+          <Parameter Name="V_SUB_ID" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_CREATE_USUARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FERIAVIRTUAL">
+          <Parameter Name="V_MAIL" Type="varchar2" Mode="In" />
+          <Parameter Name="V_PASSWORD" Type="varchar2" Mode="In" />
+          <Parameter Name="V_ROL" Type="varchar2" Mode="In" />
+        </Function>
+        <Function Name="SP_DELETE_CLIENTEI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FERIAVIRTUAL">
+          <Parameter Name="V_ID" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_DELETE_CLIENTEX" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FERIAVIRTUAL">
+          <Parameter Name="V_ID" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_DELETE__COMPRA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FERIAVIRTUAL">
+          <Parameter Name="V_ID" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_DELETE_CONTRATO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FERIAVIRTUAL">
+          <Parameter Name="V_ID" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_DELETE_PEDIDO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FERIAVIRTUAL">
+          <Parameter Name="V_ID" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_DELETE_PRODUCTO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FERIAVIRTUAL">
+          <Parameter Name="V_ID" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_DELETE_PRODUCTOR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FERIAVIRTUAL">
+          <Parameter Name="V_ID" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_DELETE_SUBASTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FERIAVIRTUAL">
+          <Parameter Name="V_ID" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_DELETE_TRANSPORTISTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FERIAVIRTUAL">
+          <Parameter Name="V_ID" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_DELETE__USUARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FERIAVIRTUAL">
+          <Parameter Name="V_ID" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_UPDATE_CLIENTEI" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FERIAVIRTUAL">
+          <Parameter Name="V_ID" Type="number" Mode="In" />
+          <Parameter Name="V_NOMBRE" Type="varchar2" Mode="In" />
+          <Parameter Name="V_RUT" Type="varchar2" Mode="In" />
+          <Parameter Name="V_REGION" Type="varchar2" Mode="In" />
+          <Parameter Name="V_DIRECCION" Type="varchar2" Mode="In" />
+          <Parameter Name="V_COMUNA" Type="varchar2" Mode="In" />
+          <Parameter Name="V_TELEFONO" Type="varchar2" Mode="In" />
+          <Parameter Name="V_CORREO" Type="varchar2" Mode="In" />
+          <Parameter Name="V_PEDIDO_ID" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_UPDATE_CLIENTEX" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FERIAVIRTUAL">
+          <Parameter Name="V_ID" Type="number" Mode="In" />
+          <Parameter Name="V_NOMBRE" Type="varchar2" Mode="In" />
+          <Parameter Name="V_RUT" Type="varchar2" Mode="In" />
+          <Parameter Name="V_PAIS" Type="varchar2" Mode="In" />
+          <Parameter Name="V_CIUDAD" Type="varchar2" Mode="In" />
+          <Parameter Name="V_DIRECCION" Type="varchar2" Mode="In" />
+          <Parameter Name="V_TELEFONO" Type="varchar2" Mode="In" />
+          <Parameter Name="V_COD" Type="varchar2" Mode="In" />
+          <Parameter Name="V_CORREO" Type="varchar2" Mode="In" />
+          <Parameter Name="V_PEDIDO_ID" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_UPDATE_COMPRA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FERIAVIRTUAL">
+          <Parameter Name="V_ID" Type="number" Mode="In" />
+          <Parameter Name="V_CANTIDAD" Type="number" Mode="In" />
+          <Parameter Name="V_VALOR" Type="number" Mode="In" />
+          <Parameter Name="V_PEDIDO_ID" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_UPDATE_CONTRATO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FERIAVIRTUAL">
+          <Parameter Name="V_ID" Type="number" Mode="In" />
+          <Parameter Name="V_TIPO" Type="varchar2" Mode="In" />
+          <Parameter Name="V_INI" Type="varchar2" Mode="In" />
+          <Parameter Name="V_FIN" Type="varchar2" Mode="In" />
+        </Function>
+        <Function Name="SP_UPDATE_PEDIDO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FERIAVIRTUAL">
+          <Parameter Name="V_ID" Type="number" Mode="In" />
+          <Parameter Name="V_TIPO" Type="varchar2" Mode="In" />
+          <Parameter Name="V_DATOS" Type="varchar2" Mode="In" />
+          <Parameter Name="V_DESTINO" Type="varchar2" Mode="In" />
+          <Parameter Name="V_PRODUCTO_ID" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_UPDATE_PRODUCTO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FERIAVIRTUAL">
+          <Parameter Name="V_ID" Type="number" Mode="In" />
+          <Parameter Name="V_NOMBRE" Type="varchar2" Mode="In" />
+          <Parameter Name="V_DATOS" Type="varchar2" Mode="In" />
+          <Parameter Name="V_PRECIO" Type="number" Mode="In" />
+          <Parameter Name="V_PRODUCTOR_ID" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_UPDATE_PRODUCTOR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FERIAVIRTUAL">
+          <Parameter Name="V_ID" Type="number" Mode="In" />
+          <Parameter Name="V_NOMBRE" Type="varchar2" Mode="In" />
+          <Parameter Name="V_RUT" Type="varchar2" Mode="In" />
+          <Parameter Name="V_DIRECCION" Type="varchar2" Mode="In" />
+          <Parameter Name="V_TELEFONO" Type="varchar2" Mode="In" />
+          <Parameter Name="V_MAIL" Type="varchar2" Mode="In" />
+          <Parameter Name="V_CONTRATO_ID" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_UPDATE_SUBASTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FERIAVIRTUAL">
+          <Parameter Name="V_ID" Type="number" Mode="In" />
+          <Parameter Name="V_MIN" Type="varchar2" Mode="In" />
+          <Parameter Name="V_MAX" Type="varchar2" Mode="In" />
+          <Parameter Name="V_DESCRIP" Type="varchar2" Mode="In" />
+          <Parameter Name="V_ESTADO" Type="varchar2" Mode="In" />
+          <Parameter Name="V_INI" Type="varchar2" Mode="In" />
+          <Parameter Name="V_FIN" Type="varchar2" Mode="In" />
+          <Parameter Name="V_PEDIDO_ID" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_UPDATE_TRANSPORTISTA" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FERIAVIRTUAL">
+          <Parameter Name="V_ID" Type="number" Mode="In" />
+          <Parameter Name="V_NOMBRE" Type="varchar2" Mode="In" />
+          <Parameter Name="V_RUT" Type="varchar2" Mode="In" />
+          <Parameter Name="V_TELEFONO" Type="varchar2" Mode="In" />
+          <Parameter Name="V_MAIL" Type="varchar2" Mode="In" />
+          <Parameter Name="V_DIRECCION" Type="varchar2" Mode="In" />
+          <Parameter Name="V_MIN" Type="varchar2" Mode="In" />
+          <Parameter Name="V_MAX" Type="varchar2" Mode="In" />
+          <Parameter Name="V_PATENTE" Type="varchar2" Mode="In" />
+          <Parameter Name="V_SUB_ID" Type="number" Mode="In" />
+        </Function>
+        <Function Name="SP_UPDATE_USUARIO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="FERIAVIRTUAL">
+          <Parameter Name="V_ID" Type="number" Mode="In" />
+          <Parameter Name="V_MAIL" Type="varchar2" Mode="In" />
+          <Parameter Name="V_PASSWORD" Type="varchar2" Mode="In" />
+          <Parameter Name="V_ROL" Type="varchar2" Mode="In" />
+        </Function>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="CLIENTEI" EntityType="Self.CLIENTEI" Schema="FERIAVIRTUAL" store:Type="Tables" />
+          <EntitySet Name="CLIENTEX" EntityType="Self.CLIENTEX" Schema="FERIAVIRTUAL" store:Type="Tables" />
+          <EntitySet Name="COMPRA" EntityType="Self.COMPRA" Schema="FERIAVIRTUAL" store:Type="Tables" />
+          <EntitySet Name="CONTRATO" EntityType="Self.CONTRATO" Schema="FERIAVIRTUAL" store:Type="Tables" />
+          <EntitySet Name="PEDIDO" EntityType="Self.PEDIDO" Schema="FERIAVIRTUAL" store:Type="Tables" />
+          <EntitySet Name="PRODUCTO" EntityType="Self.PRODUCTO" Schema="FERIAVIRTUAL" store:Type="Tables" />
+          <EntitySet Name="PRODUCTOR" EntityType="Self.PRODUCTOR" Schema="FERIAVIRTUAL" store:Type="Tables" />
+          <EntitySet Name="SUBASTA" EntityType="Self.SUBASTA" Schema="FERIAVIRTUAL" store:Type="Tables" />
+          <EntitySet Name="TRANSPORTISTA" EntityType="Self.TRANSPORTISTA" Schema="FERIAVIRTUAL" store:Type="Tables" />
+          <EntitySet Name="USUARIO" EntityType="Self.USUARIO" Schema="FERIAVIRTUAL" store:Type="Tables" />
+          <AssociationSet Name="SYS_C008196" Association="Self.SYS_C008196">
+            <End Role="PEDIDO" EntitySet="PEDIDO" />
+            <End Role="CLIENTEX" EntitySet="CLIENTEX" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C008197" Association="Self.SYS_C008197">
+            <End Role="PEDIDO" EntitySet="PEDIDO" />
+            <End Role="CLIENTEI" EntitySet="CLIENTEI" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C008198" Association="Self.SYS_C008198">
+            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+            <End Role="PEDIDO" EntitySet="PEDIDO" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C008199" Association="Self.SYS_C008199">
+            <End Role="PRODUCTOR" EntitySet="PRODUCTOR" />
+            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C008200" Association="Self.SYS_C008200">
+            <End Role="CONTRATO" EntitySet="CONTRATO" />
+            <End Role="PRODUCTOR" EntitySet="PRODUCTOR" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C008201" Association="Self.SYS_C008201">
+            <End Role="PEDIDO" EntitySet="PEDIDO" />
+            <End Role="SUBASTA" EntitySet="SUBASTA" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C008202" Association="Self.SYS_C008202">
+            <End Role="SUBASTA" EntitySet="SUBASTA" />
+            <End Role="TRANSPORTISTA" EntitySet="TRANSPORTISTA" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C008203" Association="Self.SYS_C008203">
+            <End Role="PEDIDO" EntitySet="PEDIDO" />
+            <End Role="COMPRA" EntitySet="COMPRA" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CLIENTEI">
+          <Key>
+            <PropertyRef Name="CLIENTEI_ID" />
+          </Key>
+          <Property Name="CLIENTEI_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE_IN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RUT_IN" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="REGION_IN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DIRECCION_IN" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="COMUNA_IN" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFONO_IN" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="CORREO_IN" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="PEDIDO_ID" Type="Decimal" Precision="38" Scale="0" />
+          <NavigationProperty Name="PEDIDO" Relationship="Self.SYS_C008197" FromRole="CLIENTEI" ToRole="PEDIDO" />
+        </EntityType>
+        <EntityType Name="CLIENTEX">
+          <Key>
+            <PropertyRef Name="CLIENTEX_ID" />
+          </Key>
+          <Property Name="CLIENTEX_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="NOMBRE_EX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RUT_EX" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="PAIS_EX" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="CIUDAD_EX" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="DIRECCION_EX" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFONO_EX" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="COD_POSTAL" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="CORREO_EX" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="PEDIDO_ID" Type="Decimal" Precision="38" Scale="0" />
+          <NavigationProperty Name="PEDIDO" Relationship="Self.SYS_C008196" FromRole="CLIENTEX" ToRole="PEDIDO" />
+        </EntityType>
+        <EntityType Name="COMPRA">
+          <Key>
+            <PropertyRef Name="COMPRA_ID" />
+          </Key>
+          <Property Name="COMPRA_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="COMPRA_CANT" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="COMPRA_VALOR" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PEDIDO_ID" Type="Decimal" Precision="38" Scale="0" />
+          <NavigationProperty Name="PEDIDO" Relationship="Self.SYS_C008203" FromRole="COMPRA" ToRole="PEDIDO" />
+        </EntityType>
+        <EntityType Name="CONTRATO">
+          <Key>
+            <PropertyRef Name="CONTRATO_ID" />
+          </Key>
+          <Property Name="CONTRATO_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="CONTRATO_TIPO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CONTRATO_INI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CONTRATO_FIN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PRODUCTOR" Relationship="Self.SYS_C008200" FromRole="CONTRATO" ToRole="PRODUCTOR" />
+        </EntityType>
+        <EntityType Name="PEDIDO">
+          <Key>
+            <PropertyRef Name="PEDIDO_ID" />
+          </Key>
+          <Property Name="PEDIDO_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PEDIDO_TIPO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PEDIDO_DATOS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PEDIDO_DESTINO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PRODUCTO_ID" Type="Decimal" Precision="38" Scale="0" />
+          <NavigationProperty Name="CLIENTEI" Relationship="Self.SYS_C008197" FromRole="PEDIDO" ToRole="CLIENTEI" />
+          <NavigationProperty Name="CLIENTEX" Relationship="Self.SYS_C008196" FromRole="PEDIDO" ToRole="CLIENTEX" />
+          <NavigationProperty Name="COMPRA" Relationship="Self.SYS_C008203" FromRole="PEDIDO" ToRole="COMPRA" />
+          <NavigationProperty Name="PRODUCTO" Relationship="Self.SYS_C008198" FromRole="PEDIDO" ToRole="PRODUCTO" />
+          <NavigationProperty Name="SUBASTA" Relationship="Self.SYS_C008201" FromRole="PEDIDO" ToRole="SUBASTA" />
+        </EntityType>
+        <EntityType Name="PRODUCTO">
+          <Key>
+            <PropertyRef Name="PRODUCTO_ID" />
+          </Key>
+          <Property Name="PRODUCTO_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PRODUCTO_NOMB" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PRODUCTO_DATOS" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PRODUCTO_PRECIO" Type="Decimal" Precision="38" Scale="0" />
+          <Property Name="PRODUCTOR_ID" Type="Decimal" Precision="38" Scale="0" />
+          <NavigationProperty Name="PEDIDO" Relationship="Self.SYS_C008198" FromRole="PRODUCTO" ToRole="PEDIDO" />
+          <NavigationProperty Name="PRODUCTOR" Relationship="Self.SYS_C008199" FromRole="PRODUCTO" ToRole="PRODUCTOR" />
+        </EntityType>
+        <EntityType Name="PRODUCTOR">
+          <Key>
+            <PropertyRef Name="PRODUCTOR_ID" />
+          </Key>
+          <Property Name="PRODUCTOR_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="PRODUCTOR_NOMB" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PRODUCTOR_RUT" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="PRODUCTOR_DIREC" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PRODUCTOR_TELEF" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="PRODUCTOR_MEIL" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CONTRATO_ID" Type="Decimal" Precision="38" Scale="0" />
+          <NavigationProperty Name="CONTRATO" Relationship="Self.SYS_C008200" FromRole="PRODUCTOR" ToRole="CONTRATO" />
+          <NavigationProperty Name="PRODUCTO" Relationship="Self.SYS_C008199" FromRole="PRODUCTOR" ToRole="PRODUCTO" />
+        </EntityType>
+        <EntityType Name="SUBASTA">
+          <Key>
+            <PropertyRef Name="SUB_ID" />
+          </Key>
+          <Property Name="SUB_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="SUB_MINPESO" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="SUB_MAXPESO" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="SUB_DESCRIP" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SUB_ESTADO" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="SUB_INI" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="SUB_FIN" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="PEDIDO_ID" Type="Decimal" Precision="38" Scale="0" />
+          <NavigationProperty Name="PEDIDO" Relationship="Self.SYS_C008201" FromRole="SUBASTA" ToRole="PEDIDO" />
+          <NavigationProperty Name="TRANSPORTISTA" Relationship="Self.SYS_C008202" FromRole="SUBASTA" ToRole="TRANSPORTISTA" />
+        </EntityType>
+        <EntityType Name="TRANSPORTISTA">
+          <Key>
+            <PropertyRef Name="TRANS_ID" />
+          </Key>
+          <Property Name="TRANS_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="TRANS_NOMB" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TRANS_RUT" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="TRANS_TELEF" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="TRANS_MAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TRANS_DIREC" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TRANS_MINPESO" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="TRANS_MAXPESO" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="TRANS_PATENTE" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="SUB_ID" Type="Decimal" Precision="38" Scale="0" />
+          <NavigationProperty Name="SUBASTA" Relationship="Self.SYS_C008202" FromRole="TRANSPORTISTA" ToRole="SUBASTA" />
+        </EntityType>
+        <EntityType Name="USUARIO">
+          <Key>
+            <PropertyRef Name="USER_ID" />
+          </Key>
+          <Property Name="USER_ID" Type="Decimal" Precision="38" Scale="0" Nullable="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="PASSWORD" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="ROL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="SYS_C008197">
+          <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="0..1" />
+          <End Role="CLIENTEI" Type="Self.CLIENTEI" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PEDIDO">
+              <PropertyRef Name="PEDIDO_ID" />
+            </Principal>
+            <Dependent Role="CLIENTEI">
+              <PropertyRef Name="PEDIDO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C008196">
+          <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="0..1" />
+          <End Role="CLIENTEX" Type="Self.CLIENTEX" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PEDIDO">
+              <PropertyRef Name="PEDIDO_ID" />
+            </Principal>
+            <Dependent Role="CLIENTEX">
+              <PropertyRef Name="PEDIDO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C008203">
+          <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="0..1" />
+          <End Role="COMPRA" Type="Self.COMPRA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PEDIDO">
+              <PropertyRef Name="PEDIDO_ID" />
+            </Principal>
+            <Dependent Role="COMPRA">
+              <PropertyRef Name="PEDIDO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C008200">
+          <End Role="CONTRATO" Type="Self.CONTRATO" Multiplicity="0..1" />
+          <End Role="PRODUCTOR" Type="Self.PRODUCTOR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CONTRATO">
+              <PropertyRef Name="CONTRATO_ID" />
+            </Principal>
+            <Dependent Role="PRODUCTOR">
+              <PropertyRef Name="CONTRATO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C008198">
+          <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="0..1" />
+          <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTO">
+              <PropertyRef Name="PRODUCTO_ID" />
+            </Principal>
+            <Dependent Role="PEDIDO">
+              <PropertyRef Name="PRODUCTO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C008201">
+          <End Role="PEDIDO" Type="Self.PEDIDO" Multiplicity="0..1" />
+          <End Role="SUBASTA" Type="Self.SUBASTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PEDIDO">
+              <PropertyRef Name="PEDIDO_ID" />
+            </Principal>
+            <Dependent Role="SUBASTA">
+              <PropertyRef Name="PEDIDO_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C008199">
+          <End Role="PRODUCTOR" Type="Self.PRODUCTOR" Multiplicity="0..1" />
+          <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PRODUCTOR">
+              <PropertyRef Name="PRODUCTOR_ID" />
+            </Principal>
+            <Dependent Role="PRODUCTO">
+              <PropertyRef Name="PRODUCTOR_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SYS_C008202">
+          <End Role="SUBASTA" Type="Self.SUBASTA" Multiplicity="0..1" />
+          <End Role="TRANSPORTISTA" Type="Self.TRANSPORTISTA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUBASTA">
+              <PropertyRef Name="SUB_ID" />
+            </Principal>
+            <Dependent Role="TRANSPORTISTA">
+              <PropertyRef Name="SUB_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="FeriaVirtualFinalEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CLIENTEI" EntityType="Self.CLIENTEI" />
+          <EntitySet Name="CLIENTEX" EntityType="Self.CLIENTEX" />
+          <EntitySet Name="COMPRA" EntityType="Self.COMPRA" />
+          <EntitySet Name="CONTRATO" EntityType="Self.CONTRATO" />
+          <EntitySet Name="PEDIDO" EntityType="Self.PEDIDO" />
+          <EntitySet Name="PRODUCTO" EntityType="Self.PRODUCTO" />
+          <EntitySet Name="PRODUCTOR" EntityType="Self.PRODUCTOR" />
+          <EntitySet Name="SUBASTA" EntityType="Self.SUBASTA" />
+          <EntitySet Name="TRANSPORTISTA" EntityType="Self.TRANSPORTISTA" />
+          <EntitySet Name="USUARIO" EntityType="Self.USUARIO" />
+          <AssociationSet Name="SYS_C008197" Association="Self.SYS_C008197">
+            <End Role="PEDIDO" EntitySet="PEDIDO" />
+            <End Role="CLIENTEI" EntitySet="CLIENTEI" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C008196" Association="Self.SYS_C008196">
+            <End Role="PEDIDO" EntitySet="PEDIDO" />
+            <End Role="CLIENTEX" EntitySet="CLIENTEX" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C008203" Association="Self.SYS_C008203">
+            <End Role="PEDIDO" EntitySet="PEDIDO" />
+            <End Role="COMPRA" EntitySet="COMPRA" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C008200" Association="Self.SYS_C008200">
+            <End Role="CONTRATO" EntitySet="CONTRATO" />
+            <End Role="PRODUCTOR" EntitySet="PRODUCTOR" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C008198" Association="Self.SYS_C008198">
+            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+            <End Role="PEDIDO" EntitySet="PEDIDO" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C008201" Association="Self.SYS_C008201">
+            <End Role="PEDIDO" EntitySet="PEDIDO" />
+            <End Role="SUBASTA" EntitySet="SUBASTA" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C008199" Association="Self.SYS_C008199">
+            <End Role="PRODUCTOR" EntitySet="PRODUCTOR" />
+            <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+          </AssociationSet>
+          <AssociationSet Name="SYS_C008202" Association="Self.SYS_C008202">
+            <End Role="SUBASTA" EntitySet="SUBASTA" />
+            <End Role="TRANSPORTISTA" EntitySet="TRANSPORTISTA" />
+          </AssociationSet>
+          <FunctionImport Name="SP_CREATE_CLIENTEI">
+            <Parameter Name="V_NOMBRE" Mode="In" Type="String" />
+            <Parameter Name="V_RUT" Mode="In" Type="String" />
+            <Parameter Name="V_REGION" Mode="In" Type="String" />
+            <Parameter Name="V_DIRECCION" Mode="In" Type="String" />
+            <Parameter Name="V_COMUNA" Mode="In" Type="String" />
+            <Parameter Name="V_TELEFONO" Mode="In" Type="String" />
+            <Parameter Name="V_CORREO" Mode="In" Type="String" />
+            <Parameter Name="V_PEDIDO_ID" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CREATE_CLIENTEX">
+            <Parameter Name="V_NOMBRE" Mode="In" Type="String" />
+            <Parameter Name="V_RUT" Mode="In" Type="String" />
+            <Parameter Name="V_PAIS" Mode="In" Type="String" />
+            <Parameter Name="V_CIUDAD" Mode="In" Type="String" />
+            <Parameter Name="V_DIRECCION" Mode="In" Type="String" />
+            <Parameter Name="V_TELEFONO" Mode="In" Type="String" />
+            <Parameter Name="V_COD" Mode="In" Type="String" />
+            <Parameter Name="V_CORREO" Mode="In" Type="String" />
+            <Parameter Name="V_PEDIDO_ID" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CREATE_COMPRA">
+            <Parameter Name="V_CANTIDAD" Mode="In" Type="Decimal" />
+            <Parameter Name="V_VALOR" Mode="In" Type="Decimal" />
+            <Parameter Name="V_PEDIDO_ID" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CREATE_CONTRATO">
+            <Parameter Name="V_TIPO" Mode="In" Type="String" />
+            <Parameter Name="V_INI" Mode="In" Type="String" />
+            <Parameter Name="V_FIN" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CREATE_PEDIDO">
+            <Parameter Name="V_TIPO" Mode="In" Type="String" />
+            <Parameter Name="V_DATOS" Mode="In" Type="String" />
+            <Parameter Name="V_DESTINO" Mode="In" Type="String" />
+            <Parameter Name="V_PRODUCTO_ID" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CREATE_PRODUCTO">
+            <Parameter Name="V_NOMBRE" Mode="In" Type="String" />
+            <Parameter Name="V_DATOS" Mode="In" Type="String" />
+            <Parameter Name="V_PRECIO" Mode="In" Type="Decimal" />
+            <Parameter Name="V_PRODUCTOR_ID" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CREATE_PRODUCTOR">
+            <Parameter Name="V_NOMBRE" Mode="In" Type="String" />
+            <Parameter Name="V_RUT" Mode="In" Type="String" />
+            <Parameter Name="V_DIRECCION" Mode="In" Type="String" />
+            <Parameter Name="V_TELEFONO" Mode="In" Type="String" />
+            <Parameter Name="V_MAIL" Mode="In" Type="String" />
+            <Parameter Name="V_CONTRATO_ID" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CREATE_SUBASTA">
+            <Parameter Name="V_MIN" Mode="In" Type="String" />
+            <Parameter Name="V_MAX" Mode="In" Type="String" />
+            <Parameter Name="V_DESCRIP" Mode="In" Type="String" />
+            <Parameter Name="V_ESTADO" Mode="In" Type="String" />
+            <Parameter Name="V_INI" Mode="In" Type="String" />
+            <Parameter Name="V_FIN" Mode="In" Type="String" />
+            <Parameter Name="V_PEDIDO_ID" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CREATE_TRANSPORTISTA">
+            <Parameter Name="V_NOMBRE" Mode="In" Type="String" />
+            <Parameter Name="V_RUT" Mode="In" Type="String" />
+            <Parameter Name="V_TELEFONO" Mode="In" Type="String" />
+            <Parameter Name="V_MAIL" Mode="In" Type="String" />
+            <Parameter Name="V_DIRECCION" Mode="In" Type="String" />
+            <Parameter Name="V_MIN" Mode="In" Type="String" />
+            <Parameter Name="V_MAX" Mode="In" Type="String" />
+            <Parameter Name="V_PATENTE" Mode="In" Type="String" />
+            <Parameter Name="V_SUB_ID" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_CREATE_USUARIO">
+            <Parameter Name="V_MAIL" Mode="In" Type="String" />
+            <Parameter Name="V_PASSWORD" Mode="In" Type="String" />
+            <Parameter Name="V_ROL" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_DELETE_CLIENTEI">
+            <Parameter Name="V_ID" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_DELETE_CLIENTEX">
+            <Parameter Name="V_ID" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_DELETE__COMPRA">
+            <Parameter Name="V_ID" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_DELETE_CONTRATO">
+            <Parameter Name="V_ID" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_DELETE_PEDIDO">
+            <Parameter Name="V_ID" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_DELETE_PRODUCTO">
+            <Parameter Name="V_ID" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_DELETE_PRODUCTOR">
+            <Parameter Name="V_ID" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_DELETE_SUBASTA">
+            <Parameter Name="V_ID" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_DELETE_TRANSPORTISTA">
+            <Parameter Name="V_ID" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_DELETE__USUARIO">
+            <Parameter Name="V_ID" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_UPDATE_CLIENTEI">
+            <Parameter Name="V_ID" Mode="In" Type="Decimal" />
+            <Parameter Name="V_NOMBRE" Mode="In" Type="String" />
+            <Parameter Name="V_RUT" Mode="In" Type="String" />
+            <Parameter Name="V_REGION" Mode="In" Type="String" />
+            <Parameter Name="V_DIRECCION" Mode="In" Type="String" />
+            <Parameter Name="V_COMUNA" Mode="In" Type="String" />
+            <Parameter Name="V_TELEFONO" Mode="In" Type="String" />
+            <Parameter Name="V_CORREO" Mode="In" Type="String" />
+            <Parameter Name="V_PEDIDO_ID" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_UPDATE_CLIENTEX">
+            <Parameter Name="V_ID" Mode="In" Type="Decimal" />
+            <Parameter Name="V_NOMBRE" Mode="In" Type="String" />
+            <Parameter Name="V_RUT" Mode="In" Type="String" />
+            <Parameter Name="V_PAIS" Mode="In" Type="String" />
+            <Parameter Name="V_CIUDAD" Mode="In" Type="String" />
+            <Parameter Name="V_DIRECCION" Mode="In" Type="String" />
+            <Parameter Name="V_TELEFONO" Mode="In" Type="String" />
+            <Parameter Name="V_COD" Mode="In" Type="String" />
+            <Parameter Name="V_CORREO" Mode="In" Type="String" />
+            <Parameter Name="V_PEDIDO_ID" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_UPDATE_COMPRA">
+            <Parameter Name="V_ID" Mode="In" Type="Decimal" />
+            <Parameter Name="V_CANTIDAD" Mode="In" Type="Decimal" />
+            <Parameter Name="V_VALOR" Mode="In" Type="Decimal" />
+            <Parameter Name="V_PEDIDO_ID" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_UPDATE_CONTRATO">
+            <Parameter Name="V_ID" Mode="In" Type="Decimal" />
+            <Parameter Name="V_TIPO" Mode="In" Type="String" />
+            <Parameter Name="V_INI" Mode="In" Type="String" />
+            <Parameter Name="V_FIN" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SP_UPDATE_PEDIDO">
+            <Parameter Name="V_ID" Mode="In" Type="Decimal" />
+            <Parameter Name="V_TIPO" Mode="In" Type="String" />
+            <Parameter Name="V_DATOS" Mode="In" Type="String" />
+            <Parameter Name="V_DESTINO" Mode="In" Type="String" />
+            <Parameter Name="V_PRODUCTO_ID" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_UPDATE_PRODUCTO">
+            <Parameter Name="V_ID" Mode="In" Type="Decimal" />
+            <Parameter Name="V_NOMBRE" Mode="In" Type="String" />
+            <Parameter Name="V_DATOS" Mode="In" Type="String" />
+            <Parameter Name="V_PRECIO" Mode="In" Type="Decimal" />
+            <Parameter Name="V_PRODUCTOR_ID" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_UPDATE_PRODUCTOR">
+            <Parameter Name="V_ID" Mode="In" Type="Decimal" />
+            <Parameter Name="V_NOMBRE" Mode="In" Type="String" />
+            <Parameter Name="V_RUT" Mode="In" Type="String" />
+            <Parameter Name="V_DIRECCION" Mode="In" Type="String" />
+            <Parameter Name="V_TELEFONO" Mode="In" Type="String" />
+            <Parameter Name="V_MAIL" Mode="In" Type="String" />
+            <Parameter Name="V_CONTRATO_ID" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_UPDATE_SUBASTA">
+            <Parameter Name="V_ID" Mode="In" Type="Decimal" />
+            <Parameter Name="V_MIN" Mode="In" Type="String" />
+            <Parameter Name="V_MAX" Mode="In" Type="String" />
+            <Parameter Name="V_DESCRIP" Mode="In" Type="String" />
+            <Parameter Name="V_ESTADO" Mode="In" Type="String" />
+            <Parameter Name="V_INI" Mode="In" Type="String" />
+            <Parameter Name="V_FIN" Mode="In" Type="String" />
+            <Parameter Name="V_PEDIDO_ID" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_UPDATE_TRANSPORTISTA">
+            <Parameter Name="V_ID" Mode="In" Type="Decimal" />
+            <Parameter Name="V_NOMBRE" Mode="In" Type="String" />
+            <Parameter Name="V_RUT" Mode="In" Type="String" />
+            <Parameter Name="V_TELEFONO" Mode="In" Type="String" />
+            <Parameter Name="V_MAIL" Mode="In" Type="String" />
+            <Parameter Name="V_DIRECCION" Mode="In" Type="String" />
+            <Parameter Name="V_MIN" Mode="In" Type="String" />
+            <Parameter Name="V_MAX" Mode="In" Type="String" />
+            <Parameter Name="V_PATENTE" Mode="In" Type="String" />
+            <Parameter Name="V_SUB_ID" Mode="In" Type="Decimal" />
+          </FunctionImport>
+          <FunctionImport Name="SP_UPDATE_USUARIO">
+            <Parameter Name="V_ID" Mode="In" Type="Decimal" />
+            <Parameter Name="V_MAIL" Mode="In" Type="String" />
+            <Parameter Name="V_PASSWORD" Mode="In" Type="String" />
+            <Parameter Name="V_ROL" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="FeriaVirtualFinalEntities">
+          <EntitySetMapping Name="CLIENTEI">
+            <EntityTypeMapping TypeName="Model.CLIENTEI">
+              <MappingFragment StoreEntitySet="CLIENTEI">
+                <ScalarProperty Name="CLIENTEI_ID" ColumnName="CLIENTEI_ID" />
+                <ScalarProperty Name="NOMBRE_IN" ColumnName="NOMBRE_IN" />
+                <ScalarProperty Name="RUT_IN" ColumnName="RUT_IN" />
+                <ScalarProperty Name="REGION_IN" ColumnName="REGION_IN" />
+                <ScalarProperty Name="DIRECCION_IN" ColumnName="DIRECCION_IN" />
+                <ScalarProperty Name="COMUNA_IN" ColumnName="COMUNA_IN" />
+                <ScalarProperty Name="TELEFONO_IN" ColumnName="TELEFONO_IN" />
+                <ScalarProperty Name="CORREO_IN" ColumnName="CORREO_IN" />
+                <ScalarProperty Name="PEDIDO_ID" ColumnName="PEDIDO_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CLIENTEX">
+            <EntityTypeMapping TypeName="Model.CLIENTEX">
+              <MappingFragment StoreEntitySet="CLIENTEX">
+                <ScalarProperty Name="CLIENTEX_ID" ColumnName="CLIENTEX_ID" />
+                <ScalarProperty Name="NOMBRE_EX" ColumnName="NOMBRE_EX" />
+                <ScalarProperty Name="RUT_EX" ColumnName="RUT_EX" />
+                <ScalarProperty Name="PAIS_EX" ColumnName="PAIS_EX" />
+                <ScalarProperty Name="CIUDAD_EX" ColumnName="CIUDAD_EX" />
+                <ScalarProperty Name="DIRECCION_EX" ColumnName="DIRECCION_EX" />
+                <ScalarProperty Name="TELEFONO_EX" ColumnName="TELEFONO_EX" />
+                <ScalarProperty Name="COD_POSTAL" ColumnName="COD_POSTAL" />
+                <ScalarProperty Name="CORREO_EX" ColumnName="CORREO_EX" />
+                <ScalarProperty Name="PEDIDO_ID" ColumnName="PEDIDO_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="COMPRA">
+            <EntityTypeMapping TypeName="Model.COMPRA">
+              <MappingFragment StoreEntitySet="COMPRA">
+                <ScalarProperty Name="COMPRA_ID" ColumnName="COMPRA_ID" />
+                <ScalarProperty Name="COMPRA_CANT" ColumnName="COMPRA_CANT" />
+                <ScalarProperty Name="COMPRA_VALOR" ColumnName="COMPRA_VALOR" />
+                <ScalarProperty Name="PEDIDO_ID" ColumnName="PEDIDO_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CONTRATO">
+            <EntityTypeMapping TypeName="Model.CONTRATO">
+              <MappingFragment StoreEntitySet="CONTRATO">
+                <ScalarProperty Name="CONTRATO_ID" ColumnName="CONTRATO_ID" />
+                <ScalarProperty Name="CONTRATO_TIPO" ColumnName="CONTRATO_TIPO" />
+                <ScalarProperty Name="CONTRATO_INI" ColumnName="CONTRATO_INI" />
+                <ScalarProperty Name="CONTRATO_FIN" ColumnName="CONTRATO_FIN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PEDIDO">
+            <EntityTypeMapping TypeName="Model.PEDIDO">
+              <MappingFragment StoreEntitySet="PEDIDO">
+                <ScalarProperty Name="PEDIDO_ID" ColumnName="PEDIDO_ID" />
+                <ScalarProperty Name="PEDIDO_TIPO" ColumnName="PEDIDO_TIPO" />
+                <ScalarProperty Name="PEDIDO_DATOS" ColumnName="PEDIDO_DATOS" />
+                <ScalarProperty Name="PEDIDO_DESTINO" ColumnName="PEDIDO_DESTINO" />
+                <ScalarProperty Name="PRODUCTO_ID" ColumnName="PRODUCTO_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRODUCTO">
+            <EntityTypeMapping TypeName="Model.PRODUCTO">
+              <MappingFragment StoreEntitySet="PRODUCTO">
+                <ScalarProperty Name="PRODUCTO_ID" ColumnName="PRODUCTO_ID" />
+                <ScalarProperty Name="PRODUCTO_NOMB" ColumnName="PRODUCTO_NOMB" />
+                <ScalarProperty Name="PRODUCTO_DATOS" ColumnName="PRODUCTO_DATOS" />
+                <ScalarProperty Name="PRODUCTO_PRECIO" ColumnName="PRODUCTO_PRECIO" />
+                <ScalarProperty Name="PRODUCTOR_ID" ColumnName="PRODUCTOR_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PRODUCTOR">
+            <EntityTypeMapping TypeName="Model.PRODUCTOR">
+              <MappingFragment StoreEntitySet="PRODUCTOR">
+                <ScalarProperty Name="PRODUCTOR_ID" ColumnName="PRODUCTOR_ID" />
+                <ScalarProperty Name="PRODUCTOR_NOMB" ColumnName="PRODUCTOR_NOMB" />
+                <ScalarProperty Name="PRODUCTOR_RUT" ColumnName="PRODUCTOR_RUT" />
+                <ScalarProperty Name="PRODUCTOR_DIREC" ColumnName="PRODUCTOR_DIREC" />
+                <ScalarProperty Name="PRODUCTOR_TELEF" ColumnName="PRODUCTOR_TELEF" />
+                <ScalarProperty Name="PRODUCTOR_MEIL" ColumnName="PRODUCTOR_MEIL" />
+                <ScalarProperty Name="CONTRATO_ID" ColumnName="CONTRATO_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SUBASTA">
+            <EntityTypeMapping TypeName="Model.SUBASTA">
+              <MappingFragment StoreEntitySet="SUBASTA">
+                <ScalarProperty Name="SUB_ID" ColumnName="SUB_ID" />
+                <ScalarProperty Name="SUB_MINPESO" ColumnName="SUB_MINPESO" />
+                <ScalarProperty Name="SUB_MAXPESO" ColumnName="SUB_MAXPESO" />
+                <ScalarProperty Name="SUB_DESCRIP" ColumnName="SUB_DESCRIP" />
+                <ScalarProperty Name="SUB_ESTADO" ColumnName="SUB_ESTADO" />
+                <ScalarProperty Name="SUB_INI" ColumnName="SUB_INI" />
+                <ScalarProperty Name="SUB_FIN" ColumnName="SUB_FIN" />
+                <ScalarProperty Name="PEDIDO_ID" ColumnName="PEDIDO_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TRANSPORTISTA">
+            <EntityTypeMapping TypeName="Model.TRANSPORTISTA">
+              <MappingFragment StoreEntitySet="TRANSPORTISTA">
+                <ScalarProperty Name="TRANS_ID" ColumnName="TRANS_ID" />
+                <ScalarProperty Name="TRANS_NOMB" ColumnName="TRANS_NOMB" />
+                <ScalarProperty Name="TRANS_RUT" ColumnName="TRANS_RUT" />
+                <ScalarProperty Name="TRANS_TELEF" ColumnName="TRANS_TELEF" />
+                <ScalarProperty Name="TRANS_MAIL" ColumnName="TRANS_MAIL" />
+                <ScalarProperty Name="TRANS_DIREC" ColumnName="TRANS_DIREC" />
+                <ScalarProperty Name="TRANS_MINPESO" ColumnName="TRANS_MINPESO" />
+                <ScalarProperty Name="TRANS_MAXPESO" ColumnName="TRANS_MAXPESO" />
+                <ScalarProperty Name="TRANS_PATENTE" ColumnName="TRANS_PATENTE" />
+                <ScalarProperty Name="SUB_ID" ColumnName="SUB_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USUARIO">
+            <EntityTypeMapping TypeName="Model.USUARIO">
+              <MappingFragment StoreEntitySet="USUARIO">
+                <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="ROL" ColumnName="ROL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_CREATE_CLIENTEI" FunctionName="Model.Store.SP_CREATE_CLIENTEI" />
+          <FunctionImportMapping FunctionImportName="SP_CREATE_CLIENTEX" FunctionName="Model.Store.SP_CREATE_CLIENTEX" />
+          <FunctionImportMapping FunctionImportName="SP_CREATE_COMPRA" FunctionName="Model.Store.SP_CREATE_COMPRA" />
+          <FunctionImportMapping FunctionImportName="SP_CREATE_CONTRATO" FunctionName="Model.Store.SP_CREATE_CONTRATO" />
+          <FunctionImportMapping FunctionImportName="SP_CREATE_PEDIDO" FunctionName="Model.Store.SP_CREATE_PEDIDO" />
+          <FunctionImportMapping FunctionImportName="SP_CREATE_PRODUCTO" FunctionName="Model.Store.SP_CREATE_PRODUCTO" />
+          <FunctionImportMapping FunctionImportName="SP_CREATE_PRODUCTOR" FunctionName="Model.Store.SP_CREATE_PRODUCTOR" />
+          <FunctionImportMapping FunctionImportName="SP_CREATE_SUBASTA" FunctionName="Model.Store.SP_CREATE_SUBASTA" />
+          <FunctionImportMapping FunctionImportName="SP_CREATE_TRANSPORTISTA" FunctionName="Model.Store.SP_CREATE_TRANSPORTISTA" />
+          <FunctionImportMapping FunctionImportName="SP_CREATE_USUARIO" FunctionName="Model.Store.SP_CREATE_USUARIO" />
+          <FunctionImportMapping FunctionImportName="SP_DELETE_CLIENTEI" FunctionName="Model.Store.SP_DELETE_CLIENTEI" />
+          <FunctionImportMapping FunctionImportName="SP_DELETE_CLIENTEX" FunctionName="Model.Store.SP_DELETE_CLIENTEX" />
+          <FunctionImportMapping FunctionImportName="SP_DELETE__COMPRA" FunctionName="Model.Store.SP_DELETE__COMPRA" />
+          <FunctionImportMapping FunctionImportName="SP_DELETE_CONTRATO" FunctionName="Model.Store.SP_DELETE_CONTRATO" />
+          <FunctionImportMapping FunctionImportName="SP_DELETE_PEDIDO" FunctionName="Model.Store.SP_DELETE_PEDIDO" />
+          <FunctionImportMapping FunctionImportName="SP_DELETE_PRODUCTO" FunctionName="Model.Store.SP_DELETE_PRODUCTO" />
+          <FunctionImportMapping FunctionImportName="SP_DELETE_PRODUCTOR" FunctionName="Model.Store.SP_DELETE_PRODUCTOR" />
+          <FunctionImportMapping FunctionImportName="SP_DELETE_SUBASTA" FunctionName="Model.Store.SP_DELETE_SUBASTA" />
+          <FunctionImportMapping FunctionImportName="SP_DELETE_TRANSPORTISTA" FunctionName="Model.Store.SP_DELETE_TRANSPORTISTA" />
+          <FunctionImportMapping FunctionImportName="SP_DELETE__USUARIO" FunctionName="Model.Store.SP_DELETE__USUARIO" />
+          <FunctionImportMapping FunctionImportName="SP_UPDATE_CLIENTEI" FunctionName="Model.Store.SP_UPDATE_CLIENTEI" />
+          <FunctionImportMapping FunctionImportName="SP_UPDATE_CLIENTEX" FunctionName="Model.Store.SP_UPDATE_CLIENTEX" />
+          <FunctionImportMapping FunctionImportName="SP_UPDATE_COMPRA" FunctionName="Model.Store.SP_UPDATE_COMPRA" />
+          <FunctionImportMapping FunctionImportName="SP_UPDATE_CONTRATO" FunctionName="Model.Store.SP_UPDATE_CONTRATO" />
+          <FunctionImportMapping FunctionImportName="SP_UPDATE_PEDIDO" FunctionName="Model.Store.SP_UPDATE_PEDIDO" />
+          <FunctionImportMapping FunctionImportName="SP_UPDATE_PRODUCTO" FunctionName="Model.Store.SP_UPDATE_PRODUCTO" />
+          <FunctionImportMapping FunctionImportName="SP_UPDATE_PRODUCTOR" FunctionName="Model.Store.SP_UPDATE_PRODUCTOR" />
+          <FunctionImportMapping FunctionImportName="SP_UPDATE_SUBASTA" FunctionName="Model.Store.SP_UPDATE_SUBASTA" />
+          <FunctionImportMapping FunctionImportName="SP_UPDATE_TRANSPORTISTA" FunctionName="Model.Store.SP_UPDATE_TRANSPORTISTA" />
+          <FunctionImportMapping FunctionImportName="SP_UPDATE_USUARIO" FunctionName="Model.Store.SP_UPDATE_USUARIO" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

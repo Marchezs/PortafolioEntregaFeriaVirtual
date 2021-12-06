@@ -1,0 +1,50 @@
+﻿@model FeriaVirtualFinal.Negocio.Contrato
+@{
+    ViewBag.Title = "Create";
+}
+
+
+
+<div id="listarproducto1">
+
+    @using (Html.BeginForm())
+    {
+
+
+
+
+
+        <div class="login">
+
+
+            <h2 class="login-header">Registrar Contrato</h2>
+
+            <form class="login-container">
+
+                <p style="padding-left:50px;width : 400px; height: 50px"><input placeholder="Tipo Contrato" @Html.TextBoxFor(u => u.ContratoTipo)></p>
+                <p style="padding-left:50px;width : 400px; height: 50px"><input placeholder="Fecha de Inicio" @Html.TextBoxFor(u => u.ContratoIni)></p>
+                <p style="padding-left:50px;width : 400px; height: 50px"><input placeholder="Fecha de Termino" @Html.TextBoxFor(u => u.ContratoFin)></p>
+                <p style="padding-left:50px;width : 400px; height: 50px"><input type="submit" value="Registrar"></p>
+
+
+
+
+
+
+            </form>
+
+
+
+
+
+
+        </div>
+
+
+
+    }
+    <br />
+    <div class="alert alert-danger">@Html.ValidationSummary()</div>
+</div>
+
+

@@ -1,0 +1,13 @@
+C:\Users\Marcelo Díaz\source\repos\FeriaVirtualFinal\FeriaVirtualFinal.Negocio\bin\Debug\FeriaVirtualFinal.Negocio.dll
+C:\Users\Marcelo Díaz\source\repos\FeriaVirtualFinal\FeriaVirtualFinal.Negocio\bin\Debug\FeriaVirtualFinal.Negocio.pdb
+C:\Users\Marcelo Díaz\source\repos\FeriaVirtualFinal\FeriaVirtualFinal.Negocio\bin\Debug\FeriaVirtualFinal.DALC.dll
+C:\Users\Marcelo Díaz\source\repos\FeriaVirtualFinal\FeriaVirtualFinal.Negocio\bin\Debug\EntityFramework.dll
+C:\Users\Marcelo Díaz\source\repos\FeriaVirtualFinal\FeriaVirtualFinal.Negocio\bin\Debug\FeriaVirtualFinal.DALC.pdb
+C:\Users\Marcelo Díaz\source\repos\FeriaVirtualFinal\FeriaVirtualFinal.Negocio\bin\Debug\FeriaVirtualFinal.DALC.dll.config
+C:\Users\Marcelo Díaz\source\repos\FeriaVirtualFinal\FeriaVirtualFinal.Negocio\bin\Debug\EntityFramework.xml
+C:\Users\Marcelo Díaz\source\repos\FeriaVirtualFinal\FeriaVirtualFinal.Negocio\obj\Debug\FeriaVirtualFinal.Negocio.csprojAssemblyReference.cache
+C:\Users\Marcelo Díaz\source\repos\FeriaVirtualFinal\FeriaVirtualFinal.Negocio\obj\Debug\FeriaVirtualFinal.Negocio.csproj.CoreCompileInputs.cache
+C:\Users\Marcelo Díaz\source\repos\FeriaVirtualFinal\FeriaVirtualFinal.Negocio\obj\Debug\FeriaVirtualFinal.Negocio.csproj.CopyComplete
+C:\Users\Marcelo Díaz\source\repos\FeriaVirtualFinal\FeriaVirtualFinal.Negocio\obj\Debug\FeriaVirtualFinal.Negocio.dll
+C:\Users\Marcelo Díaz\source\repos\FeriaVirtualFinal\FeriaVirtualFinal.Negocio\obj\Debug\FeriaVirtualFinal.Negocio.pdb
+C:\Users\Marcelo Díaz\source\repos\FeriaVirtualFinal\FeriaVirtualFinal.Negocio\bin\Debug\FeriaVirtualFinal.Negocio.dll.config

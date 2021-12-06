@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "MenuProductor";
+}
+
+<h2 class="login-header">Menu de Productor</h2>
+
+<div id="menuclientesa">
+
+    <button style="margin-bottom:5px;" type="button" onclick="location.href='@Url.Action("Index","Productor")'"><span>Listado de productores</span></button>
+    <button style="margin-bottom:5px;" type="button" onclick="location.href='@Url.Action("Create","Productor")'"><span>Registrar productor</span></button>
+    <button style="margin-bottom:5px;" type="button" onclick="location.href='@Url.Action("ViewContratos")'"><span>Contratos</span></button>
+    <button type="button" onclick="location.href='@Url.Action("MenuAdministrador")'"><span>Volver</span></button>
+
+</div>

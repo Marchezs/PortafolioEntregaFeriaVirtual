@@ -1,0 +1,40 @@
+﻿@model FeriaVirtualFinal.Negocio.Usuario
+@{
+    ViewBag.Title = "Login";
+}
+
+
+
+<div id="listarproducto1">
+    @using (Html.BeginForm())
+    {
+
+        <div class="login">
+            <div class="login-triangle"></div>
+
+            <h2 style="" class="login-header">Ingresar Credenciales</h2>
+
+            <form class="login-container">
+
+                <p style="padding-left:50px;"><input placeholder="Correo" @Html.TextBoxFor(q => q.Email, new { type = "email" })></p>
+                <p style="padding-left:50px;"><input placeholder="Contraseña" @Html.PasswordFor(u => u.Password)></p>
+                <p style="padding-left:50px;"><input placeholder="Rol" @Html.TextBoxFor(q => q.Rol)></p>
+                <p style="padding-left:50px;"><input type="submit" value="Ingresar" ></p>
+
+            </form>
+        </div>
+
+
+
+    }
+    <br />
+    <div class="alert alert-danger">@TempData["mensaje"]</div>
+</div>
+
+
+
+
+
+
+
+

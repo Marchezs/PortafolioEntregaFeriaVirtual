@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "MenuPedidos";
+}
+
+<h2 class="login-header">Menu Pedidos</h2>
+
+
+<div id="menuclientesa">
+
+    <button style="margin-bottom:5px;" type="button" onclick="location.href='@Url.Action("Index","Pedido")'"><span>Listado de Pedidos</span></button>
+    <button style="margin-bottom:5px;" type="button" onclick="location.href='@Url.Action("Create","Pedido")'"><span>Registrar Pedido</span></button>
+    <button type="button" onclick="location.href='@Url.Action("MenuAdministrador")'"><span>Volver</span></button>
+
+</div>

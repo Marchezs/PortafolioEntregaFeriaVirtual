@@ -1,0 +1,31 @@
+﻿@model FeriaVirtualFinal.Negocio.Compra
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Pagar</h2>
+
+@using (Html.BeginForm())
+{
+
+<div id="listarproducto1">
+
+    @Html.LabelFor(r => r.CantidadCompra, "cantidad:  ")
+    <br />
+    @Html.TextBoxFor(r => r.CantidadCompra)
+    <br />
+    @Html.LabelFor(r => r.ValorCompra, "valor :  ")
+    <br />
+    @Html.TextBoxFor(r => r.ValorCompra)
+    <br />
+
+
+
+    <button>Comprar</button>
+
+
+
+</div>
+}
+
+

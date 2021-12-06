@@ -1,0 +1,89 @@
+﻿@using FeriaVirtualFinal.Negocio;
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="login-header">Contratos</h2>
+
+@{List<Contrato> contratos = (List<Contrato>)ViewBag.contratos;}
+@{List<Productor> productores = (List<Productor>)ViewBag.productores;}
+
+
+
+<table class="card-body" id="createproductor">
+    <tr>
+
+
+        <th>Nombre productor</th>
+        <th>Rut productor</th>
+        <th>Mail</th>
+
+
+
+
+
+    </tr>
+
+    @foreach (var producto in productores)
+    {
+        <tr>
+
+
+            <td>@producto.ProductorNom</td>
+            <td>@producto.ProductorRut</td>
+            <td>@producto.ProductorMail</td>
+
+
+
+        </tr>
+
+
+
+    }
+
+        <tr>
+
+
+            <th>Tipo de contrato</th>
+            <th>Inicio de contrato</th>
+            <th>Termino de contrato</th>
+            
+
+
+
+
+
+        </tr>
+
+    @foreach (var contrato in contratos)
+    {
+        <tr>
+
+
+            <td>@contrato.ContratoTipo</td>
+            <td>@contrato.ContratoIni</td>
+            <td>@contrato.ContratoFin</td>
+           
+
+
+
+        </tr>
+
+
+
+    }
+
+
+
+
+
+
+
+
+</table>
+
+
+
+<div class="alert alert-success">@TempData["mensaje"]</div>
+
+

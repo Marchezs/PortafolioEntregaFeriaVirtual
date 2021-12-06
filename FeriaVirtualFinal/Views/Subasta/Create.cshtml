@@ -1,0 +1,43 @@
+﻿@model FeriaVirtualFinal.Negocio.Subasta
+@{
+    ViewBag.Title = "Create";
+}
+
+
+
+
+
+<div id="listarproducto1">
+
+
+    @using (Html.BeginForm())
+    {
+
+
+        <div class="login">
+
+
+            <h2 class="login-header">Registrar Subasta</h2>
+
+            <p style="padding-left:50px;width : 400px; height: 50px"><input placeholder="Peso Minimo" @Html.TextBoxFor(s => s.SubPesoMin)></p>
+            <p style="padding-left:50px;width : 400px; height: 50px"><input placeholder="Peso Maximo" @Html.TextBoxFor(s => s.SubPesoMax)></p>
+            <p style="padding-left:50px;width : 400px; height: 50px"><input placeholder="Descripcion" @Html.TextBoxFor(s => s.SubDecrip)></p>
+            <p style="padding-left:50px;width : 400px; height: 50px"><input placeholder="Estado" @Html.TextBoxFor(s => s.SubEstado)></p>
+            <p style="padding-left:50px;width : 400px; height: 50px"><input placeholder="Fecha de Inicio" @Html.TextBoxFor(s => s.SubIni)></p>
+            <p style="padding-left:50px;width : 400px; height: 50px"><input placeholder="Fecha de Final" @Html.TextBoxFor(s => s.SubFin)></p>
+            <p style="padding-left:50px;width : 400px; height: 50px"><input type="submit" value="Registrar"></p>
+
+
+
+
+
+
+
+
+
+        </div>
+
+    }
+    <br />
+    <div class="alert alert-danger">@Html.ValidationSummary()</div>
+</div>

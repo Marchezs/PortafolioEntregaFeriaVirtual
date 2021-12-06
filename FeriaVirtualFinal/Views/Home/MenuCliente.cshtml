@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "MenuCliente";
+}
+
+<h2 class="login-header">Menu Cliente</h2>
+
+<div id="menuclientesa">
+    <button style="margin-bottom:5px;" " type="button" onclick="location.href='@Url.Action("Index","Clientei")'"><span>Listado de cliente internos</span></button>
+    <button style="margin-bottom:5px;" type="button" onclick="location.href='@Url.Action("Create","Clientei")'"><span>Registrar cliente interno</span></button>
+    <button style="margin-bottom:5px;" type="button" onclick="location.href='@Url.Action("Index","Clientex")'"><span>Listado de clientes externos</span></button>
+    <button style="margin-bottom:5px;" type="button" onclick="location.href='@Url.Action("Create","Clientex")'"><span>Registrar clientes externos</span></button>
+    <button type="button" onclick="location.href='@Url.Action("MenuAdministrador")'"><span>Volver</span></button>
+</div>

@@ -1,0 +1,51 @@
+﻿@using FeriaVirtualFinal.Negocio;
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="login-header">Lista Clientes  Internos</h2>
+
+
+@{List<Clientei> clienteis = (List<Clientei>)ViewBag.clienteis;}
+
+
+<table class="card-body" id="createproductor">
+    <tr>
+        <th>Nombre</th>
+        <th>Rut</th>
+        <th>Region</th>
+        <th>Comuna</th>
+        <th>Telefono</th>
+        <th>Correo</th>
+        
+
+
+    </tr>
+
+    @foreach (var clientei in clienteis)
+    {
+        <tr>
+
+            <td>@clientei.NombClientei</td>
+            <td>@clientei.RutClientei</td>
+            <td>@clientei.RegionClientei</td>
+            <td>@clientei.ComunaClientei</td>
+            <td>@clientei.TelefClientei</td>
+            <td>@clientei.CorreoClientei</td>
+            
+
+
+
+
+
+
+
+
+        </tr>
+
+    }
+
+</table>
+
+<div class="alert alert-success">@TempData["mensaje"]</div>
+

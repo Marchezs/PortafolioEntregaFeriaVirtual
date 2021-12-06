@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "VistaClientex";
+}
+
+<h2 class="login-header">Menu Cliente Externo</h2>
+
+<div id="menuclientesa">
+    <button style="margin-bottom:5px;" type="button" onclick="location.href='@Url.Action("Create","Pedido")'"><span>Hacer un pedido</span></button>
+
+    <button style="margin-bottom:5px;" type="button" onclick="location.href='@Url.Action("CarrodeCompra")'"><span>Comprar</span></button>
+
+    <button style="margin-bottom:5px;" type="button" onclick="location.href='@Url.Action("Index","Pedido")'"><span>Mis Pedidos</span></button>
+
+    <button type="button" onclick="location.href='@Url.Action("VistaTotalClientes")'"><span>Volver</span></button>
+
+</div>

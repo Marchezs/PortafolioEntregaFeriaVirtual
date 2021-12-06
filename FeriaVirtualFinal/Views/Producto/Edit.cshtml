@@ -1,0 +1,46 @@
+﻿@model FeriaVirtualFinal.Negocio.Producto
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+
+
+<div id="listarproducto1">
+    @using (Html.BeginForm())
+    {
+
+        <div class="login">
+
+
+            <h2 class="login-header">Modificar Producto</h2>
+
+            <form class="login-container">
+                @Html.HiddenFor(p => p.ProductoId)
+                <p style="padding-left:50px;width : 400px; height: 50px"><input placeholder="Nombre del producto" @Html.TextBoxFor(p => p.ProductoNomb)></p>
+                <p style="padding-left:50px;width : 400px; height: 50px"><input placeholder="Informacion del producto" @Html.TextBoxFor(p => p.ProductoDatos)></p>
+                <p style="padding-left:50px;width : 400px; height: 50px"><input placeholder="Valor en dolar" @Html.TextBoxFor(P => P.ProductoPrecio)></p>
+                <p style="padding-left:50px;width : 400px; height: 50px"><input type="submit" value="Modificar"></p>
+
+
+
+
+
+
+            </form>
+
+
+
+
+
+
+        </div>
+
+
+
+    }
+    <br />
+    <div class="alert alert-danger">@Html.ValidationSummary()</div>
+
+</div>
+

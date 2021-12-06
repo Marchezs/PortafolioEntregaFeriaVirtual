@@ -1,0 +1,60 @@
+﻿@using FeriaVirtualFinal.Negocio;
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="login-header">Lista de Transportistas</h2>
+
+
+
+@{List<Transportista> transportistas = (List<Transportista>)ViewBag.transportistas;}
+
+
+<table class="card-body" id="createproductor">
+    <tr>
+        <th>Nombre</th>
+        <th>Rut</th>
+        <th>Telefono</th>
+        <th>Correo</th>
+        <th>Direccion</th>
+        <th>Peso minimo</th>
+        <th>Peso maximo</th>
+        <th>Patente</th>
+
+    </tr>
+
+    @foreach (var transportista in transportistas)
+    {
+    <tr>
+
+        <td>@transportista.TransNomb</td>
+        <td>@transportista.TransRut</td>
+        <td>@transportista.TransTelef</td>
+        <td>@transportista.TransMail</td>
+        <td>@transportista.TransDirec</td>
+        <td>@transportista.TransMin</td>
+        <td>@transportista.TransMax</td>
+        <td>@transportista.TransPatente</td>
+        <td>
+
+            @Html.ActionLink("Eliminar", "Delete", new { id = transportista.TransId})
+
+            @Html.ActionLink("Modificar", "Edit", new { id = transportista.TransId })
+
+           
+        </td>
+
+
+
+
+
+
+
+
+    </tr>
+
+    }
+
+</table>
+
+<div class="alert alert-success">@TempData["mensaje"]</div>

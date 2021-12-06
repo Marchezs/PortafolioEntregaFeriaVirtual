@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "MenuNotificar";
+}
+
+<h2 class="login-header">Notificar Subasta</h2>
+
+
+<div id="menuclientesa">
+
+    @*Aqui tengo para mandar email marcelodiazq23@gmail.com*@
+    <form action="https://formsubmit.co/marcelodiazq23@gmail.com" method="POST">
+
+        
+        <label>
+            Mensaje
+            <input type="text" name="name" required>
+        </label>
+        <br />
+
+
+        <label>
+            Email
+            <input type="email" name="email" required>
+        </label>
+        <br />
+
+        
+
+        @* text area grande
+            <label>
+                Detalle
+                <br />
+                <textarea name="textarea" rows="10" cols="50">sssssssss</textarea>
+            </label>
+        *@
+        <br />
+        <label>
+            <button type="submit">Notificar</button>
+        </label>
+
+
+    </form>
+</div>

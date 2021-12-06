@@ -1,0 +1,57 @@
+﻿@model FeriaVirtualFinal.Negocio.Transportista
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+
+
+<div id="listarproducto1">
+    @using (Html.BeginForm())
+    {
+
+
+        <div class="login">
+
+
+            <h2 class="login-header">Modificar Transportista</h2>
+
+            <form class="login-container">
+                @Html.HiddenFor(t => t.TransId)
+                <p style="padding-left:50px;width : 400px; height: 40px"><input placeholder="Nombre de Transportista" @Html.TextBoxFor(t => t.TransNomb)></p>
+                <p style="padding-left:50px;width : 400px; height: 40px"><input placeholder="Rut" @Html.TextBoxFor(t => t.TransRut)></p>
+                <p style="padding-left:50px;width : 400px; height: 40px"><input placeholder="Telefono" @Html.TextBoxFor(t => t.TransTelef)></p>
+                <p style="padding-left:50px;width : 400px; height: 40px"><input placeholder="Correo" @Html.TextBoxFor(t => t.TransMail)></p>
+                <p style="padding-left:50px;width : 400px; height: 40px"><input placeholder="Direccion" @Html.TextBoxFor(t => t.TransDirec)></p>
+                <p style="padding-left:50px;width : 400px; height: 40px"><input placeholder="Peso Mimino" @Html.TextBoxFor(t => t.TransMin)></p>
+                <p style="padding-left:50px;width : 400px; height: 40px"><input placeholder="Peso Maxino" @Html.TextBoxFor(t => t.TransMax)></p>
+                <p style="padding-left:50px;width : 400px; height: 40px"><input placeholder="Patente" @Html.TextBoxFor(t => t.TransPatente)></p>
+                <p style="padding-left:50px;width : 400px; height: 40px"><input type="submit" value="Modificar"></p>
+
+
+
+
+
+
+            </form>
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+    }
+    <br />
+    <div class="alert alert-danger">@Html.ValidationSummary()</div>
+
+</div>

@@ -1,0 +1,49 @@
+﻿@model FeriaVirtualFinal.Negocio.Clientei
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+<div id="listarproducto1">
+    @using (Html.BeginForm())
+    {
+
+
+
+        <div class="login">
+
+
+            <h2 class="login-header">Modificar Cliente Interno</h2>
+
+            <form class="login-container">
+                @Html.HiddenFor(i => i.ClienteiId)
+                <p style="padding-left:50px;width : 400px; height: 50px"><input placeholder="Nombre" @Html.TextBoxFor(i => i.NombClientei)></p>
+                <p style="padding-left:50px;width : 400px; height: 50px"><input placeholder="Rut" @Html.TextBoxFor(i => i.RutClientei)></p>
+                <p style="padding-left:50px;width : 400px; height: 50px"><input placeholder="Region" @Html.TextBoxFor(i => i.RegionClientei)></p>
+                <p style="padding-left:50px;width : 400px; height: 50px"><input placeholder="Comuna" @Html.TextBoxFor(i => i.ComunaClientei)></p>
+                <p style="padding-left:50px;width : 400px; height: 50px"><input placeholder="Direccion" @Html.TextBoxFor(i => i.DirecClientei)></p>
+                <p style="padding-left:50px;width : 400px; height: 50px"><input placeholder="Telefono" @Html.TextBoxFor(i => i.TelefClientei)></p>
+                <p style="padding-left:50px;width : 400px; height: 50px"><input placeholder="Correo" @Html.TextBoxFor(i => i.CorreoClientei)></p>
+                <p style="padding-left:50px;width : 400px; height: 50px"><input type="submit" value="Modificar"></p>
+
+
+
+
+
+
+            </form>
+
+
+
+
+
+
+        </div>
+
+
+
+    }
+    <br />
+    <div class="alert alert-danger">@Html.ValidationSummary()</div>
+
+</div>

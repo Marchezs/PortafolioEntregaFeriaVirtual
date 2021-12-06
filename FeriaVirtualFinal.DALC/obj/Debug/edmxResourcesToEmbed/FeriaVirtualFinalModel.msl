@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="FeriaVirtualFinalEntities">
+    <EntitySetMapping Name="CLIENTEI">
+      <EntityTypeMapping TypeName="Model.CLIENTEI">
+        <MappingFragment StoreEntitySet="CLIENTEI">
+          <ScalarProperty Name="CLIENTEI_ID" ColumnName="CLIENTEI_ID" />
+          <ScalarProperty Name="NOMBRE_IN" ColumnName="NOMBRE_IN" />
+          <ScalarProperty Name="RUT_IN" ColumnName="RUT_IN" />
+          <ScalarProperty Name="REGION_IN" ColumnName="REGION_IN" />
+          <ScalarProperty Name="DIRECCION_IN" ColumnName="DIRECCION_IN" />
+          <ScalarProperty Name="COMUNA_IN" ColumnName="COMUNA_IN" />
+          <ScalarProperty Name="TELEFONO_IN" ColumnName="TELEFONO_IN" />
+          <ScalarProperty Name="CORREO_IN" ColumnName="CORREO_IN" />
+          <ScalarProperty Name="PEDIDO_ID" ColumnName="PEDIDO_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CLIENTEX">
+      <EntityTypeMapping TypeName="Model.CLIENTEX">
+        <MappingFragment StoreEntitySet="CLIENTEX">
+          <ScalarProperty Name="CLIENTEX_ID" ColumnName="CLIENTEX_ID" />
+          <ScalarProperty Name="NOMBRE_EX" ColumnName="NOMBRE_EX" />
+          <ScalarProperty Name="RUT_EX" ColumnName="RUT_EX" />
+          <ScalarProperty Name="PAIS_EX" ColumnName="PAIS_EX" />
+          <ScalarProperty Name="CIUDAD_EX" ColumnName="CIUDAD_EX" />
+          <ScalarProperty Name="DIRECCION_EX" ColumnName="DIRECCION_EX" />
+          <ScalarProperty Name="TELEFONO_EX" ColumnName="TELEFONO_EX" />
+          <ScalarProperty Name="COD_POSTAL" ColumnName="COD_POSTAL" />
+          <ScalarProperty Name="CORREO_EX" ColumnName="CORREO_EX" />
+          <ScalarProperty Name="PEDIDO_ID" ColumnName="PEDIDO_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="COMPRA">
+      <EntityTypeMapping TypeName="Model.COMPRA">
+        <MappingFragment StoreEntitySet="COMPRA">
+          <ScalarProperty Name="COMPRA_ID" ColumnName="COMPRA_ID" />
+          <ScalarProperty Name="COMPRA_CANT" ColumnName="COMPRA_CANT" />
+          <ScalarProperty Name="COMPRA_VALOR" ColumnName="COMPRA_VALOR" />
+          <ScalarProperty Name="PEDIDO_ID" ColumnName="PEDIDO_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONTRATO">
+      <EntityTypeMapping TypeName="Model.CONTRATO">
+        <MappingFragment StoreEntitySet="CONTRATO">
+          <ScalarProperty Name="CONTRATO_ID" ColumnName="CONTRATO_ID" />
+          <ScalarProperty Name="CONTRATO_TIPO" ColumnName="CONTRATO_TIPO" />
+          <ScalarProperty Name="CONTRATO_INI" ColumnName="CONTRATO_INI" />
+          <ScalarProperty Name="CONTRATO_FIN" ColumnName="CONTRATO_FIN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PEDIDO">
+      <EntityTypeMapping TypeName="Model.PEDIDO">
+        <MappingFragment StoreEntitySet="PEDIDO">
+          <ScalarProperty Name="PEDIDO_ID" ColumnName="PEDIDO_ID" />
+          <ScalarProperty Name="PEDIDO_TIPO" ColumnName="PEDIDO_TIPO" />
+          <ScalarProperty Name="PEDIDO_DATOS" ColumnName="PEDIDO_DATOS" />
+          <ScalarProperty Name="PEDIDO_DESTINO" ColumnName="PEDIDO_DESTINO" />
+          <ScalarProperty Name="PRODUCTO_ID" ColumnName="PRODUCTO_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTO">
+      <EntityTypeMapping TypeName="Model.PRODUCTO">
+        <MappingFragment StoreEntitySet="PRODUCTO">
+          <ScalarProperty Name="PRODUCTO_ID" ColumnName="PRODUCTO_ID" />
+          <ScalarProperty Name="PRODUCTO_NOMB" ColumnName="PRODUCTO_NOMB" />
+          <ScalarProperty Name="PRODUCTO_DATOS" ColumnName="PRODUCTO_DATOS" />
+          <ScalarProperty Name="PRODUCTO_PRECIO" ColumnName="PRODUCTO_PRECIO" />
+          <ScalarProperty Name="PRODUCTOR_ID" ColumnName="PRODUCTOR_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRODUCTOR">
+      <EntityTypeMapping TypeName="Model.PRODUCTOR">
+        <MappingFragment StoreEntitySet="PRODUCTOR">
+          <ScalarProperty Name="PRODUCTOR_ID" ColumnName="PRODUCTOR_ID" />
+          <ScalarProperty Name="PRODUCTOR_NOMB" ColumnName="PRODUCTOR_NOMB" />
+          <ScalarProperty Name="PRODUCTOR_RUT" ColumnName="PRODUCTOR_RUT" />
+          <ScalarProperty Name="PRODUCTOR_DIREC" ColumnName="PRODUCTOR_DIREC" />
+          <ScalarProperty Name="PRODUCTOR_TELEF" ColumnName="PRODUCTOR_TELEF" />
+          <ScalarProperty Name="PRODUCTOR_MEIL" ColumnName="PRODUCTOR_MEIL" />
+          <ScalarProperty Name="CONTRATO_ID" ColumnName="CONTRATO_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SUBASTA">
+      <EntityTypeMapping TypeName="Model.SUBASTA">
+        <MappingFragment StoreEntitySet="SUBASTA">
+          <ScalarProperty Name="SUB_ID" ColumnName="SUB_ID" />
+          <ScalarProperty Name="SUB_MINPESO" ColumnName="SUB_MINPESO" />
+          <ScalarProperty Name="SUB_MAXPESO" ColumnName="SUB_MAXPESO" />
+          <ScalarProperty Name="SUB_DESCRIP" ColumnName="SUB_DESCRIP" />
+          <ScalarProperty Name="SUB_ESTADO" ColumnName="SUB_ESTADO" />
+          <ScalarProperty Name="SUB_INI" ColumnName="SUB_INI" />
+          <ScalarProperty Name="SUB_FIN" ColumnName="SUB_FIN" />
+          <ScalarProperty Name="PEDIDO_ID" ColumnName="PEDIDO_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRANSPORTISTA">
+      <EntityTypeMapping TypeName="Model.TRANSPORTISTA">
+        <MappingFragment StoreEntitySet="TRANSPORTISTA">
+          <ScalarProperty Name="TRANS_ID" ColumnName="TRANS_ID" />
+          <ScalarProperty Name="TRANS_NOMB" ColumnName="TRANS_NOMB" />
+          <ScalarProperty Name="TRANS_RUT" ColumnName="TRANS_RUT" />
+          <ScalarProperty Name="TRANS_TELEF" ColumnName="TRANS_TELEF" />
+          <ScalarProperty Name="TRANS_MAIL" ColumnName="TRANS_MAIL" />
+          <ScalarProperty Name="TRANS_DIREC" ColumnName="TRANS_DIREC" />
+          <ScalarProperty Name="TRANS_MINPESO" ColumnName="TRANS_MINPESO" />
+          <ScalarProperty Name="TRANS_MAXPESO" ColumnName="TRANS_MAXPESO" />
+          <ScalarProperty Name="TRANS_PATENTE" ColumnName="TRANS_PATENTE" />
+          <ScalarProperty Name="SUB_ID" ColumnName="SUB_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USUARIO">
+      <EntityTypeMapping TypeName="Model.USUARIO">
+        <MappingFragment StoreEntitySet="USUARIO">
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="ROL" ColumnName="ROL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_CREATE_CLIENTEI" FunctionName="Model.Store.SP_CREATE_CLIENTEI" />
+    <FunctionImportMapping FunctionImportName="SP_CREATE_CLIENTEX" FunctionName="Model.Store.SP_CREATE_CLIENTEX" />
+    <FunctionImportMapping FunctionImportName="SP_CREATE_COMPRA" FunctionName="Model.Store.SP_CREATE_COMPRA" />
+    <FunctionImportMapping FunctionImportName="SP_CREATE_CONTRATO" FunctionName="Model.Store.SP_CREATE_CONTRATO" />
+    <FunctionImportMapping FunctionImportName="SP_CREATE_PEDIDO" FunctionName="Model.Store.SP_CREATE_PEDIDO" />
+    <FunctionImportMapping FunctionImportName="SP_CREATE_PRODUCTO" FunctionName="Model.Store.SP_CREATE_PRODUCTO" />
+    <FunctionImportMapping FunctionImportName="SP_CREATE_PRODUCTOR" FunctionName="Model.Store.SP_CREATE_PRODUCTOR" />
+    <FunctionImportMapping FunctionImportName="SP_CREATE_SUBASTA" FunctionName="Model.Store.SP_CREATE_SUBASTA" />
+    <FunctionImportMapping FunctionImportName="SP_CREATE_TRANSPORTISTA" FunctionName="Model.Store.SP_CREATE_TRANSPORTISTA" />
+    <FunctionImportMapping FunctionImportName="SP_CREATE_USUARIO" FunctionName="Model.Store.SP_CREATE_USUARIO" />
+    <FunctionImportMapping FunctionImportName="SP_DELETE_CLIENTEI" FunctionName="Model.Store.SP_DELETE_CLIENTEI" />
+    <FunctionImportMapping FunctionImportName="SP_DELETE_CLIENTEX" FunctionName="Model.Store.SP_DELETE_CLIENTEX" />
+    <FunctionImportMapping FunctionImportName="SP_DELETE__COMPRA" FunctionName="Model.Store.SP_DELETE__COMPRA" />
+    <FunctionImportMapping FunctionImportName="SP_DELETE_CONTRATO" FunctionName="Model.Store.SP_DELETE_CONTRATO" />
+    <FunctionImportMapping FunctionImportName="SP_DELETE_PEDIDO" FunctionName="Model.Store.SP_DELETE_PEDIDO" />
+    <FunctionImportMapping FunctionImportName="SP_DELETE_PRODUCTO" FunctionName="Model.Store.SP_DELETE_PRODUCTO" />
+    <FunctionImportMapping FunctionImportName="SP_DELETE_PRODUCTOR" FunctionName="Model.Store.SP_DELETE_PRODUCTOR" />
+    <FunctionImportMapping FunctionImportName="SP_DELETE_SUBASTA" FunctionName="Model.Store.SP_DELETE_SUBASTA" />
+    <FunctionImportMapping FunctionImportName="SP_DELETE_TRANSPORTISTA" FunctionName="Model.Store.SP_DELETE_TRANSPORTISTA" />
+    <FunctionImportMapping FunctionImportName="SP_DELETE__USUARIO" FunctionName="Model.Store.SP_DELETE__USUARIO" />
+    <FunctionImportMapping FunctionImportName="SP_UPDATE_CLIENTEI" FunctionName="Model.Store.SP_UPDATE_CLIENTEI" />
+    <FunctionImportMapping FunctionImportName="SP_UPDATE_CLIENTEX" FunctionName="Model.Store.SP_UPDATE_CLIENTEX" />
+    <FunctionImportMapping FunctionImportName="SP_UPDATE_COMPRA" FunctionName="Model.Store.SP_UPDATE_COMPRA" />
+    <FunctionImportMapping FunctionImportName="SP_UPDATE_CONTRATO" FunctionName="Model.Store.SP_UPDATE_CONTRATO" />
+    <FunctionImportMapping FunctionImportName="SP_UPDATE_PEDIDO" FunctionName="Model.Store.SP_UPDATE_PEDIDO" />
+    <FunctionImportMapping FunctionImportName="SP_UPDATE_PRODUCTO" FunctionName="Model.Store.SP_UPDATE_PRODUCTO" />
+    <FunctionImportMapping FunctionImportName="SP_UPDATE_PRODUCTOR" FunctionName="Model.Store.SP_UPDATE_PRODUCTOR" />
+    <FunctionImportMapping FunctionImportName="SP_UPDATE_SUBASTA" FunctionName="Model.Store.SP_UPDATE_SUBASTA" />
+    <FunctionImportMapping FunctionImportName="SP_UPDATE_TRANSPORTISTA" FunctionName="Model.Store.SP_UPDATE_TRANSPORTISTA" />
+    <FunctionImportMapping FunctionImportName="SP_UPDATE_USUARIO" FunctionName="Model.Store.SP_UPDATE_USUARIO" />
+  </EntityContainerMapping>
+</Mapping>

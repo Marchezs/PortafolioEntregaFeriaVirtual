@@ -1,0 +1,50 @@
+﻿@model FeriaVirtualFinal.Negocio.Pedido
+@{
+    ViewBag.Title = "Create";
+}
+
+
+
+
+
+<div id="listarproducto1">
+    @using (Html.BeginForm())
+    {
+
+
+        <div class="login">
+
+
+            <h2 class="login-header">Registrar Pedido</h2>
+
+            <p style="padding-left:50px;width : 400px; height: 50px"><input placeholder="Tipo" @Html.TextBoxFor(o => o.PedidoTipo)></p>
+            <p style="padding-left:50px;width : 400px; height: 50px"><input placeholder="Datos" @Html.TextBoxFor(o => o.PedidoDatos)></p>
+            <p style="padding-left:50px;width : 400px; height: 50px"><input placeholder="Destino" @Html.TextBoxFor(o => o.PedidoDestino)></p>
+            <p style="padding-left:50px;width : 400px; height: 50px"><input type="submit" value="Registrar"></p>
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+    }
+    <br />
+    <div class="alert alert-danger">@Html.ValidationSummary()</div>
+
+
+
+
+
+
+
+</div>

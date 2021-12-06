@@ -1,0 +1,10 @@
+C:\Users\Marcelo Díaz\source\repos\FeriaVirtualFinal\FeriaVirtualFinal.DALC\bin\Debug\FeriaVirtualFinal.DALC.dll.config
+C:\Users\Marcelo Díaz\source\repos\FeriaVirtualFinal\FeriaVirtualFinal.DALC\bin\Debug\FeriaVirtualFinal.DALC.dll
+C:\Users\Marcelo Díaz\source\repos\FeriaVirtualFinal\FeriaVirtualFinal.DALC\bin\Debug\FeriaVirtualFinal.DALC.pdb
+C:\Users\Marcelo Díaz\source\repos\FeriaVirtualFinal\FeriaVirtualFinal.DALC\bin\Debug\EntityFramework.dll
+C:\Users\Marcelo Díaz\source\repos\FeriaVirtualFinal\FeriaVirtualFinal.DALC\bin\Debug\EntityFramework.xml
+C:\Users\Marcelo Díaz\source\repos\FeriaVirtualFinal\FeriaVirtualFinal.DALC\obj\Debug\FeriaVirtualFinal.DALC.csprojAssemblyReference.cache
+C:\Users\Marcelo Díaz\source\repos\FeriaVirtualFinal\FeriaVirtualFinal.DALC\obj\Debug\FeriaVirtualFinal.DALC.csproj.CoreCompileInputs.cache
+C:\Users\Marcelo Díaz\source\repos\FeriaVirtualFinal\FeriaVirtualFinal.DALC\obj\Debug\FeriaVirtualFinal.DALC.csproj.CopyComplete
+C:\Users\Marcelo Díaz\source\repos\FeriaVirtualFinal\FeriaVirtualFinal.DALC\obj\Debug\FeriaVirtualFinal.DALC.dll
+C:\Users\Marcelo Díaz\source\repos\FeriaVirtualFinal\FeriaVirtualFinal.DALC\obj\Debug\FeriaVirtualFinal.DALC.pdb

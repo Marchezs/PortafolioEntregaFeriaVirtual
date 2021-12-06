@@ -1,0 +1,413 @@
+﻿@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background: #D38312; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #A83279, #D38312); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #A83279, #D38312); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    width: 100vw;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+#createproductor {
+    background-color: antiquewhite;
+    opacity: 0.8;
+    border-radius: 10px;
+    color: black;
+    font-size: 100%;
+    font-weight: bold;
+    display: grid;
+}
+
+#listarproducto1 {
+    opacity: 0.9;
+    height: 500px;
+    width: 400px;
+    background: #456;
+    font-family: 'Open Sans', sans-serif;
+    margin: auto;
+}
+
+#buttonmenus {
+    background-color: blanchedalmond;
+    opacity: 0.8;
+    border-radius: 10px;
+    padding: 17px;
+    width: 300px;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 100%;
+    font-weight: bold;
+}
+
+#buttonmenus2 {
+    background-color: blanchedalmond;
+    opacity: 0.8;
+    border-radius: 10px;
+    padding: 17px;
+    width: 300px;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 100%;
+    font-weight: bold;
+}
+
+
+#b1 {
+    background-color: blanchedalmond;
+    opacity: 0.8;
+    border-radius: 10px;
+    padding: 17px;
+    width: 300px;
+    position: relative;
+    color: black;
+    font-size: 100%;
+    font-weight: bold;
+}
+
+/*centrar los menus*/
+#menuclientesa{
+    align-items:center;
+    justify-content:center;
+    display:grid;
+
+
+}
+
+#crear {
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    position: relative;
+    background-color:antiquewhite;
+    opacity:0.8;
+}
+
+
+
+
+/* estilo de botones*/
+button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: antiquewhite;
+    border: none;
+    color: black;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    margin-top: 5px;
+}
+
+    button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+        button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
+
+    button:hover span {
+        padding-right: 25px;
+    }
+
+        button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
+
+
+
+
+        /*---------------------------------------------*/
+
+/*estilos de tabla*/
+
+table {
+    width: 100%;
+    border: 1px solid #000;
+}
+
+th, td {
+    width: 25%;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid #000;
+    border-collapse: collapse;
+    padding: 0.3em;
+    caption-side: bottom;
+}
+
+caption {
+    padding: 0.3em;
+    color: #fff;
+    background: #000;
+}
+
+th {
+    background: #eee;
+}
+
+/*----------------------------------------------------------*/
+
+
+
+
+
+/*estilo Titulos*/
+
+
+h2 {
+    color: #3c1b66;
+    font-weight: normal;
+    font-size: 35px;
+    font-family: Arial;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%
+}
+
+
+/*------------------------------------------------------------*/
+
+
+/*Login forma*/
+
+.login {
+    width: 400px;
+    margin: 16px auto;
+    font-size: 16px;
+}
+
+    /* Reset top and bottom margins from certain elements */
+    .login-header,
+    .login p {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+/* The triangle form is achieved by a CSS hack */
+.login-triangle {
+    width: 0;
+    margin-right: auto;
+    margin-left: auto;
+    border: 12px solid transparent;
+    border-bottom-color: #28d;
+
+}
+
+.login-header {
+    background: #28d;
+    padding: 20px;
+    
+    font-size: 1.4em;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.login-container {
+    background: #ebebeb;
+    padding: 12px;
+}
+
+/* Every row inside .login-container is defined with p tags */
+.login p {
+    padding: 12px;
+}
+
+.login input {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    padding: 16px;
+    outline: 0;
+    font-family: inherit;
+    font-size: 0.95em;
+}
+
+    .login input[type="email"],
+    .login input[type="password"] {
+        background: #fff;
+        border-color: #bbb;
+        color: #555;
+    }
+
+        /* Text fields' focus effect */
+        .login input[type="email"]:focus,
+        .login input[type="password"]:focus {
+            border-color: #888;
+        }
+
+    .login input[type="submit"] {
+        background: #28d;
+        border-color: transparent;
+        color: #fff;
+        cursor: pointer;
+    }
+
+        .login input[type="submit"]:hover {
+            background: #17c;
+        }
+
+        /* Buttons' focus effect */
+        .login input[type="submit"]:focus {
+            border-color: #05a;
+        }
+
+
+
+/*-------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*El estilo del footer*/
+
+
+
+.footer-dark {
+    padding: 50px 0;
+    color: #f0f9ff;
+    background-color: #282d32;
+}
+
+    .footer-dark h3 {
+        margin-top: 0;
+        margin-bottom: 12px;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .footer-dark ul {
+        padding: 0;
+        list-style: none;
+        line-height: 1.6;
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+
+        .footer-dark ul a {
+            color: inherit;
+            text-decoration: none;
+            opacity: 0.6;
+        }
+
+            .footer-dark ul a:hover {
+                opacity: 0.8;
+            }
+
+@media (max-width:767px) {
+    .footer-dark .item:not(.social) {
+        text-align: center;
+        padding-bottom: 20px;
+    }
+}
+
+.footer-dark .item.text {
+    margin-bottom: 36px;
+}
+
+@media (max-width:767px) {
+    .footer-dark .item.text {
+        margin-bottom: 0;
+    }
+}
+
+.footer-dark .item.text p {
+    opacity: 0.6;
+    margin-bottom: 0;
+}
+
+.footer-dark .item.social {
+    text-align: center;
+}
+
+@media (max-width:991px) {
+    .footer-dark .item.social {
+        text-align: center;
+        margin-top: 20px;
+    }
+}
+
+.footer-dark .item.social > a {
+    font-size: 20px;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.4);
+    margin: 0 8px;
+    color: #fff;
+    opacity: 0.75;
+}
+
+    .footer-dark .item.social > a:hover {
+        opacity: 0.9;
+    }
+
+.footer-dark .copyright {
+    text-align: center;
+    padding-top: 24px;
+    opacity: 0.3;
+    font-size: 13px;
+    margin-bottom: 0;
+}
+
+#fodertotal {
+    position: fixed;
+    bottom: 0px;
+    width:100%;
+}
+
+https://epicbootstrap.com/snippets/footer-dark
+
