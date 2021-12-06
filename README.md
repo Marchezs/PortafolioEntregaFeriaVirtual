@@ -12,6 +12,9 @@ Visual Studio Code Ultima Ver.
 API paypal
 paqueteria Blazor
 
+Forma de Desarrollo
+ASP.NET Modelo MVC Con C#
+
 Framework
 Entities.FrameWork
 Oracle Manager.Acces
