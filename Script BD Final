@@ -1,0 +1,633 @@
+-------------------------------------------------------------------------------------------------------
+
+create user feriavirtual identified by 1234 default tablespace users quota unlimited on users;
+
+grant connect, resource to feriavirtual;
+
+En caso de que se tenga algun problema en ejecutar el Script usar
+alter session set "_ORACLE_SCRIPT"=true;
+
+--------------------------------------------------------------------------------------------------------
+create table clientex
+(
+    clientex_id        number primary key,
+    nombre_ex          varchar2(50),
+    rut_ex             varchar2(25),
+    pais_ex            varchar2(25),
+    ciudad_ex          varchar2(25),
+    direccion_ex       varchar2(25),
+    telefono_ex        varchar2(25),
+    cod_postal         varchar2(25),
+    correo_ex          varchar2(25),
+    pedido_id          number
+    
+);
+
+create table clientei
+(
+    clientei_id        number primary key,
+    nombre_in          varchar2(50),
+    rut_in             varchar2(25),
+    region_in          varchar2(50),
+    direccion_in       varchar2(25),
+    comuna_in          varchar2(25),
+    telefono_in        varchar2(25),
+    correo_in          varchar2(25),
+    pedido_id          number  
+
+);
+
+create table pedido
+(
+    pedido_id            number primary key,
+    pedido_tipo          varchar2(30),
+    pedido_datos         varchar2(100),
+    pedido_destino       varchar2(100),
+    producto_id          number
+);
+
+create table producto
+(
+    producto_id        number primary key,
+    producto_nomb      varchar2(100),
+    producto_datos     varchar2(100),
+    producto_precio    number,
+    productor_id       number
+    
+);
+
+create table productor
+(
+    productor_id       number primary key,
+    productor_nomb     varchar2(100),
+    productor_rut      varchar2(25),
+    productor_direc    varchar2(30),
+    productor_telef    varchar2(25),
+    productor_meil     varchar2(30),
+    contrato_id        number
+
+);
+
+create table contrato
+(
+    contrato_id        number primary key,
+    contrato_tipo      varchar2(100),
+    contrato_ini       varchar2 (50),
+    contrato_fin       varchar2 (50)
+);
+
+create table subasta
+(
+    sub_id         number primary key,
+    sub_minpeso    varchar2(25),
+    sub_maxpeso    varchar2(25),
+    sub_descrip    varchar2(100),
+    sub_estado     varchar2(25),
+    sub_ini        varchar2(25),
+    sub_fin        varchar2(25),
+    pedido_id      number
+);
+
+create table transportista
+(
+    trans_id          number primary key,
+    trans_nomb        varchar2(100),
+    trans_rut         varchar2(25),
+    trans_telef       varchar2(25),
+    trans_mail        varchar2(50),
+    trans_direc       varchar2(30),
+    trans_minpeso     varchar2(25),
+    trans_maxpeso     varchar2(25),
+    trans_patente     varchar2(25),
+    sub_id            number
+);
+
+create table compra
+(
+   compra_id          number primary key,
+   compra_cant        number,
+   compra_valor       number,
+   pedido_id          number
+
+);
+
+alter table clientex
+    add foreign key (pedido_id) references pedido (pedido_id);
+
+alter table clientei
+    add foreign key (pedido_id) references pedido (pedido_id);
+
+alter table pedido
+    add foreign key (producto_id) references producto (producto_id);
+
+alter table producto
+    add foreign key (productor_id) references productor (productor_id);
+
+alter table productor
+    add foreign key (contrato_id ) references contrato (contrato_id);
+
+alter table subasta
+    add foreign key (pedido_id) references pedido (pedido_id);
+
+alter table transportista
+    add foreign key (sub_id) references subasta (sub_id);
+
+alter table compra
+    add foreign key (pedido_id) references pedido (pedido_id);
+
+
+CREATE SEQUENCE clientex_seq
+    START WITH 1
+    INCREMENT BY 1
+    NOCACHE
+    NOCYCLE;
+
+CREATE SEQUENCE clientei_seq
+    START WITH 1
+    INCREMENT BY 1
+    NOCACHE
+    NOCYCLE;
+
+CREATE SEQUENCE pedido_seq
+    START WITH 1000
+    INCREMENT BY 10
+    NOCACHE
+    NOCYCLE;
+
+CREATE SEQUENCE producto_seq
+    START WITH 10
+    INCREMENT BY 1
+    NOCACHE
+    NOCYCLE;
+
+CREATE SEQUENCE productor_seq
+    START WITH 1
+    INCREMENT BY 1
+    NOCACHE
+    NOCYCLE;
+
+CREATE SEQUENCE contrato_seq
+    START WITH 1
+    INCREMENT BY 1
+    NOCACHE
+    NOCYCLE;
+
+CREATE SEQUENCE subasta_seq
+    START WITH 1
+    INCREMENT BY 1
+    NOCACHE
+    NOCYCLE;
+
+
+CREATE SEQUENCE transportista_seq
+    START WITH 1
+    INCREMENT BY 1
+    NOCACHE
+    NOCYCLE;
+
+
+CREATE SEQUENCE compra_seq
+    START WITH 10
+    INCREMENT BY 10
+    NOCACHE
+    NOCYCLE;
+
+insert into contrato
+values (contrato_seq.nextval, 'Definido','2 de abril 2021','2 de abril 2025');
+insert into contrato
+values (contrato_seq.nextval, 'Definido','5 de agosto 2021','5 de agosto 2025');
+insert into contrato
+values (contrato_seq.nextval, 'Definido','7 de junio 2021','7 de junio 2025');
+insert into contrato
+values (contrato_seq.nextval, 'Definido','3 de mayo 2021','3 de mayo 2025');
+
+
+insert into productor
+values (productor_seq.nextval, 'Javier soto','15.234.256-2','Las bellotas 8374','98574547','javier@gmail.com',1);
+insert into productor
+values (productor_seq.nextval, 'zaul quintil','18.234.123-7','cobija 546','96458341','zaul@gmail.com',2);
+insert into productor
+values (productor_seq.nextval, 'melisa espina','16.324.563-4','independencia 3332','99532067','melissa@gmail.com',3);
+insert into productor
+values (productor_seq.nextval, 'maria quinis','19.234.567-k','Avenida sur 1834','98453256','maria@gmail.com',4);
+
+
+insert into producto
+values (producto_seq.nextval, 'Naranjas granel','Naranjas de temporadas especial para jugos 10 kilogramos',12000,1);
+insert into producto
+values (producto_seq.nextval, 'Frutillas','Frutillas de temporada especial para jugos 10kilogramos',10000,2);
+insert into producto
+values (producto_seq.nextval, 'Manzanas chinas','Manzanas chinas de temporada especial para jugos 10kilogramos',14000,3);
+insert into producto
+values (producto_seq.nextval, 'Durasnos','Durasnos de temporada especial para jugos 10 kilogramos',9000,4);
+
+
+insert into pedido
+values (pedido_seq.nextval, 'Boleta','Compra de naranjas','La nubes 8374',10);
+insert into pedido
+values (pedido_seq.nextval, 'Factura','Compras de frutillas','Arcana 2634',11);
+insert into pedido
+values (pedido_seq.nextval, 'Boleta','Compra de manzanas','Laguna sur 2837',12);
+insert into pedido
+values (pedido_seq.nextval, 'Factura','Compra de Durasnos','La Farfana 273',13);
+
+insert into clientex
+values (clientex_seq.nextval, 'Daniel beniur','XLSKD3412','Francia','Paris','Le pereur 23','74658837','Z2342','DanieBen@gmail.com',1000);
+insert into clientex
+values (clientex_seq.nextval, 'Jasmin rojas','1.324.234-S','Colombia','Bogota','Pasera 238','5288374','I234','JasminR@gmail.com',1010);
+insert into clientex
+values (clientex_seq.nextval, 'Manuel garcia','224359475','Peru','Lima','La fuente 231','8736432','CBGD23','Manu@hotmail.com',1020);
+insert into clientex
+values (clientex_seq.nextval, 'Benni saloso','78542196','Italia','Roma','Linozo 2341','12837474','23HG23','BennieSalo@Hotmail.com',1030);
+
+
+insert into clientei
+values (clientei_seq.nextval, 'Gonzalo flores','16.234.324-5','Metropolitana','Santiago centro 223','Santiago','97362423','GonzaF@gmail.com',1000);
+insert into clientei
+values (clientei_seq.nextval, 'Javier soto','19.234.112-4','Magallanes','Lazon 238','Magallanes','93824752','JaviSo@gmail.com',1010);
+insert into clientei
+values (clientei_seq.nextval, 'Felipe kulpinte','20.435.947-5','Araucania','Kalki 2312','La Araucania','98374623','FeliKul@hotmail.com',1020);
+insert into clientei
+values (clientei_seq.nextval, 'Denis zandobal','21.928.665-2','Los rios','Las manzanas 2341','Los lagos','98374263','DenisZa@Hotmail.com',1030);
+
+
+insert into subasta
+values (subasta_seq.nextval, '80KG','300KG','El camion debe cumplir las condicienes de peso y envio','Reservado','25/11/2021','25/12/2021',1000);
+insert into subasta
+values (subasta_seq.nextval, '90KG','500KG','El camion debe cumplir las condicienes de peso y envio','Libre','13/11/2021','19/12/2021',1010);
+insert into subasta
+values (subasta_seq.nextval, '60KG','400KG','El camion debe cumplir las condicienes de peso y envio','Reservado','30/11/2021','30/12/2021',1020);
+insert into subasta
+values (subasta_seq.nextval, '70KG','600KG','El camion debe cumplir las condicienes de peso y envio','Reservado','29/11/2021','29/12/2021',1030);
+
+
+insert into transportista
+values (transportista_seq.nextval, 'Alejandro Carion','16.873.023-9','98374232','Alejo@hotmail.cl','Las parcelas 2039','80KG','300KG','ZS9344',1);
+insert into transportista
+values (transportista_seq.nextval, 'Alberto Diaz ','15.827.475-2','92738945','Albedis@gmail.com','Av los pajaritos 4736','90KG','500KG','GX82374',2);
+insert into transportista
+values (transportista_seq.nextval, 'Jose Jorquera','14.827.938-4','92838455','Josejose@gmail.com','Santiago centro 2342','60KG','400KG','ZV92384',3);
+insert into transportista
+values (transportista_seq.nextval, 'Gonzalo Barrientos','17.928.029-3','98273745','GonzaloBar@gmail.com','Avedul 293','70KG','600KG','JG92834',4);
+
+insert into compra
+values (compra_seq.nextval, 15,180000,1000);
+insert into compra
+values (compra_seq.nextval, 10,100000,1010);
+insert into compra
+values (compra_seq.nextval, 10,140000,1020);
+insert into compra
+values (compra_seq.nextval, 15,135000,1030);
+
+
+create or replace procedure SP_CREATE_CLIENTEX(v_nombre varchar2, v_rut varchar2, v_pais varchar2,v_ciudad varchar2,v_direccion varchar2,v_telefono varchar2,v_cod varchar2,v_correo varchar2 , v_pedido_id number) as
+
+begin
+
+    insert into clientex values (clientex_seq.nextval, v_nombre, v_rut, v_pais,v_ciudad,v_direccion,v_telefono,v_cod,v_correo,v_pedido_id);
+    commit;
+
+end;
+
+
+create or replace procedure SP_UPDATE_CLIENTEX(v_id number,v_nombre varchar2, v_rut varchar2, v_pais varchar2,v_ciudad varchar2,v_direccion varchar2,v_telefono varchar2,v_cod varchar2,v_correo varchar2 , v_pedido_id number) as
+
+begin
+
+    UPDATE clientex
+    SET nombre_ex = v_nombre,
+        rut_ex   = v_rut,
+        pais_ex  = v_pais,
+        ciudad_ex = v_ciudad, 
+        direccion_ex = v_direccion,
+        telefono_ex  = v_telefono,
+        cod_postal  = v_cod,
+        correo_ex = v_correo,
+        pedido_id = v_pedido_id
+    where clientex_id = v_id;
+    commit;
+
+end;
+
+create or replace procedure SP_DELETE_CLIENTEX(v_id number) as
+
+begin
+    delete from clientex where clientex_id = v_id;
+    commit;
+end;
+
+
+create or replace procedure SP_CREATE_CLIENTEI(v_nombre varchar2, v_rut varchar2, v_region varchar2,v_direccion varchar2,v_comuna varchar2,v_telefono varchar2,v_correo varchar2, v_pedido_id number) as
+
+begin
+
+    insert into clientei values (clientei_seq.nextval, v_nombre, v_rut,v_region, v_direccion,v_comuna,v_telefono,v_correo,v_pedido_id);
+    commit;
+
+end;
+
+
+create or replace procedure SP_UPDATE_CLIENTEI(v_id number,v_nombre varchar2, v_rut varchar2, v_region varchar2,v_direccion varchar2,v_comuna varchar2,v_telefono varchar2,v_correo varchar2, v_pedido_id number) as
+
+begin
+
+    UPDATE clientei
+    SET nombre_in = v_nombre,
+        rut_in  = v_rut,
+        region_in  = v_region ,
+        direccion_in = v_direccion, 
+        comuna_in = v_comuna,
+        telefono_in  = v_telefono ,
+        correo_in   = v_correo,
+        pedido_id = v_pedido_id
+    where clientei_id = v_id;
+    commit;
+
+end;
+
+create or replace procedure SP_DELETE_CLIENTEI(v_id number) as
+
+begin
+    delete from clientei where clientei_id = v_id;
+    commit;
+end;
+
+
+create or replace procedure SP_CREATE_PEDIDO(v_tipo varchar2, v_datos varchar2, v_destino varchar2,v_producto_id number) as
+
+begin
+
+    insert into pedido values (pedido_seq.nextval, v_tipo, v_datos,v_destino,v_producto_id);
+    commit;
+
+end;
+
+create or replace procedure SP_UPDATE_PEDIDO(v_id number,v_tipo varchar2, v_datos varchar2, v_destino varchar2,v_producto_id number) as
+
+begin
+
+    UPDATE pedido
+    SET pedido_tipo  = v_tipo,
+        pedido_datos  = v_datos,
+        pedido_destino  = v_destino,
+        producto_id = v_producto_id
+    where pedido_id   = v_id;
+    commit;
+
+end;
+
+create or replace procedure SP_DELETE_PEDIDO(v_id number) as
+
+begin
+    delete from pedido where pedido_id = v_id;
+    commit;
+end;
+
+
+create or replace procedure SP_CREATE_PRODUCTO(v_nombre varchar2, v_datos varchar2, v_precio number,v_productor_id number) as
+
+begin
+
+    insert into producto values (producto_seq.nextval, v_nombre, v_datos,v_precio,v_productor_id);
+    commit;
+
+end;
+
+create or replace procedure SP_UPDATE_PRODUCTO(v_id number,v_nombre varchar2, v_datos varchar2, v_precio number,v_productor_id number) as
+
+begin
+
+    UPDATE producto
+    SET producto_nomb = v_nombre,
+        producto_datos = v_datos,
+        producto_precio = v_precio,
+        productor_id = v_productor_id
+    where producto_id = v_id;
+    commit;
+
+end;
+
+create or replace procedure SP_DELETE_PRODUCTO(v_id number) as
+
+begin
+    delete from producto where producto_id = v_id;
+    commit;
+end;
+
+create or replace procedure SP_CREATE_PRODUCTOR(v_nombre varchar2, v_rut varchar2, v_direccion varchar2,v_telefono varchar2,v_mail varchar2,v_contrato_id number) as
+
+begin
+
+    insert into productor values (productor_seq.nextval, v_nombre, v_rut,v_direccion,v_telefono,v_mail,v_contrato_id);
+    commit;
+
+end;
+
+
+create or replace procedure SP_UPDATE_PRODUCTOR(v_id number,v_nombre varchar2, v_rut varchar2, v_direccion varchar2,v_telefono varchar2,v_mail varchar2,v_contrato_id number) as
+
+begin
+
+    UPDATE productor
+    SET productor_nomb = v_nombre,
+        productor_rut = v_rut,
+        productor_direc = v_direccion,
+        productor_telef = v_telefono,
+        productor_meil = v_mail,
+        contrato_id = v_contrato_id
+    where productor_id = v_id;
+    commit;
+
+end;
+
+create or replace procedure SP_DELETE_PRODUCTOR(v_id number) as
+
+begin
+    delete from productor where productor_id = v_id;
+    commit;
+end;
+
+
+create or replace procedure SP_CREATE_CONTRATO(v_tipo varchar2, v_ini varchar2, v_fin varchar2) as
+
+begin
+
+    insert into contrato values (contrato_seq.nextval, v_tipo, v_ini,v_fin);
+    commit;
+
+end;
+
+create or replace procedure SP_UPDATE_CONTRATO(v_id number,v_tipo varchar2, v_ini varchar2, v_fin varchar2) as
+
+begin
+
+    UPDATE contrato
+    SET contrato_tipo = v_tipo,
+        contrato_ini  = v_ini,
+        contrato_fin = v_fin
+    where contrato_id  = v_id;
+    commit;
+
+end;
+
+create or replace procedure SP_DELETE_CONTRATO(v_id number) as
+
+begin
+    delete from contrato where contrato_id = v_id;
+    commit;
+end;
+
+create or replace procedure SP_CREATE_SUBASTA(v_min varchar2, v_max varchar2, v_descrip varchar2,v_estado varchar2,v_ini varchar2,v_fin varchar2,v_pedido_id number) as
+
+begin
+
+    insert into subasta values (subasta_seq.nextval,v_min,v_max,v_descrip,v_estado,v_ini,v_fin,v_pedido_id);
+    commit;
+
+end;
+
+create or replace procedure SP_UPDATE_SUBASTA(v_id number,v_min varchar2, v_max varchar2, v_descrip varchar2,v_estado varchar2,v_ini varchar2,v_fin varchar2,v_pedido_id number) as
+
+begin
+
+    UPDATE subasta
+    SET sub_minpeso = v_min ,
+        sub_maxpeso  = v_max,
+        sub_descrip = v_descrip,
+        sub_estado = v_estado,
+        sub_ini  = v_ini,
+        sub_fin = v_fin,
+        pedido_id = v_pedido_id
+    where sub_id = v_id;
+    commit;
+
+end;
+
+create or replace procedure SP_DELETE_SUBASTA(v_id number) as
+
+begin
+    delete from subasta where sub_id = v_id;
+    commit;
+end;
+
+create or replace procedure SP_CREATE_TRANSPORTISTA(v_nombre varchar2, v_rut varchar2, v_telefono varchar2,v_mail varchar2,v_direccion varchar2,v_min varchar2,v_max varchar2,v_patente varchar2,v_sub_id number) as
+
+begin
+
+    insert into transportista values (transportista_seq.nextval,v_nombre,v_rut,v_telefono,v_mail,v_direccion,v_min,v_max,v_patente,v_sub_id);
+    commit;
+
+end;
+
+create or replace procedure SP_UPDATE_TRANSPORTISTA(v_id number,v_nombre varchar2, v_rut varchar2, v_telefono varchar2,v_mail varchar2,v_direccion varchar2,v_min varchar2,v_max varchar2,v_patente varchar2,v_sub_id number) as
+
+begin
+
+    UPDATE transportista
+    SET trans_nomb = v_nombre ,
+        trans_rut  = v_rut,
+        trans_telef = v_telefono,
+        trans_mail = v_mail,
+        trans_direc  = v_direccion,
+        trans_minpeso = v_min,
+        trans_maxpeso = v_max,
+        trans_patente = v_patente,
+        sub_id  =  v_sub_id
+    where trans_id = v_id;
+    commit;
+
+end;
+
+create or replace procedure SP_DELETE_TRANSPORTISTA(v_id number) as
+
+begin
+    delete from transportista where trans_id = v_id;
+    commit;
+end;
+
+create or replace procedure SP_CREATE_COMPRA(v_cantidad number, v_valor number,v_pedido_id number) as
+
+begin
+
+    insert into compra values (compra_seq.nextval,v_cantidad,v_valor,v_pedido_id);
+    commit;
+
+end;
+
+create or replace procedure SP_UPDATE_COMPRA(v_id number,v_cantidad number, v_valor number,v_pedido_id number) as
+
+begin
+
+    UPDATE compra
+    SET compra_cant = v_cantidad,
+        compra_valor  = v_valor,
+        pedido_id = v_pedido_id
+    where compra_id = v_id;
+    commit;
+
+end;
+
+create or replace procedure SP_DELETE__COMPRA(v_id number) as
+
+begin
+    delete from compra where compra_id = v_id;
+    commit;
+end;
+
+
+
+
+create table USUARIO 
+(
+user_id number primary key ,
+email varchar2 (200) unique,
+password varchar2 (200), 
+rol varchar2 (50)
+
+);
+
+CREATE SEQUENCE usuario_seq
+    START WITH 1
+    INCREMENT BY 1
+    NOCACHE
+    NOCYCLE;
+
+insert into USUARIO values (usuario_seq.nextval,'mar.diaz@admin.cl','admin1','administrador');
+insert into USUARIO values (usuario_seq.nextval,'profe@admin.cl','admin2','administrador');
+insert into USUARIO values (usuario_seq.nextval,'productor@admin.cl','admin3','productor');
+insert into USUARIO values (usuario_seq.nextval,'cliente@admin.cl','admin4','cliente');
+insert into USUARIO values (usuario_seq.nextval,'transportista@admin.cl','admin5','transportista');
+
+create or replace procedure SP_CREATE_USUARIO(v_mail varchar2, v_password varchar2,v_rol varchar2) as
+
+begin
+
+    insert into USUARIO values (usuario_seq.nextval,v_mail,v_password,v_rol);
+    commit;
+
+end;
+
+
+create or replace procedure SP_UPDATE_USUARIO(v_id number,v_mail varchar2, v_password varchar2,v_rol varchar2) as
+
+begin
+
+    UPDATE USUARIO
+    SET email = v_mail,
+        password  = v_password,
+        rol = v_rol
+    where user_id = v_id;
+    commit;
+
+end;
+
+create or replace procedure SP_DELETE__USUARIO(v_id number) as
+
+begin
+    delete from USUARIO where user_id = v_id;
+    commit;
+end;
+
+commit;
+
+
