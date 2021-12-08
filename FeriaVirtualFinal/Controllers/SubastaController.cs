@@ -140,7 +140,7 @@ namespace FeriaVirtualFinal.Controllers
             }
 
             TempData["mensaje"] = "No cumple con los requesitos de peso";
-            return View("Index");
+            return View(subasta);
         }
     }
 }
