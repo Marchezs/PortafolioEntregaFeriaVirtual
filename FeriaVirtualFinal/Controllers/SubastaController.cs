@@ -130,5 +130,17 @@ namespace FeriaVirtualFinal.Controllers
                 return View();
             }
         }
+        
+        public ActionResult Pedir(Subasta subasta,Transportista transportista)
+        {
+           if(subasta.SubPesoMax  == transportista.TransMax && subasta.SubPesoMin == transportista.TransMin)
+            {
+                TempData["mensaje"] = "Pedido correctamente";
+                return View("Index");
+            }
+
+            TempData["mensaje"] = "No cumple con los requesitos de peso";
+            return View("Index");
+        }
     }
 }
